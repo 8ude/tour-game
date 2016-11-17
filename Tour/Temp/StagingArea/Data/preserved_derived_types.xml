@@ -1,0 +1,20 @@
+<linker>
+<assembly fullname="Assembly-CSharp">
+<type fullname="CS_AudioManager" preserve="all"/>
+<type fullname="CS_PlayBGM" preserve="all"/>
+<type fullname="CS_PlaySFX" preserve="all"/>
+<type fullname="CS_AddScore" preserve="all"/>
+<type fullname="CS_Animator" preserve="all"/>
+<type fullname="CS_Button" preserve="all"/>
+<type fullname="CS_Camera" preserve="all"/>
+<type fullname="CS_Friend" preserve="all"/>
+<type fullname="CS_LoadStage" preserve="all"/>
+<type fullname="CS_MessageBox" preserve="all"/>
+<type fullname="CS_Player" preserve="all"/>
+<type fullname="CS_PlayerControl" preserve="all"/>
+<type fullname="CS_PreView" preserve="all"/>
+<type fullname="CS_Site" preserve="all"/>
+<type fullname="CS_Subway" preserve="all"/>
+<type fullname="CS_Worker" preserve="all"/>
+</assembly>
+</linker>
