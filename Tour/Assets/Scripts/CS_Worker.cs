@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class CS_Worker : MonoBehaviour {
-	private List<Vector2> myTargetList;
-	private Vector2 myTarget;
-	[SerializeField] Vector2 myRandomDestination;
+	private List<Vector3> myTargetList;
+	private Vector3 myTarget;
+	[SerializeField] Vector3 myRandomDestination;
 	[SerializeField] float myRandomDestinationPosibility;
 	[SerializeField] float myVelocity;
 	// Use this for initialization
@@ -15,11 +15,11 @@ public class CS_Worker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector2 t_myPosition = this.transform.position;
-		Vector2 t_direction = myTarget - t_myPosition;
+		Vector3 t_myPosition = this.transform.position;
+		Vector3 t_direction = myTarget - t_myPosition;
 		t_myPosition += t_direction.normalized * myVelocity * Time.deltaTime;
 		this.transform.position = t_myPosition;
-		if (Vector2.Distance (t_myPosition, myTarget) < myVelocity * Time.deltaTime) {
+		if (Vector3.Distance (t_myPosition, myTarget) < myVelocity * Time.deltaTime) {
 			//arrived
 			SetNewTarget();
 		}
@@ -46,13 +46,14 @@ public class CS_Worker : MonoBehaviour {
 	}
 
 	private void CreateRandomDesitination () {
-		myTarget = new Vector2 (
+		myTarget = new Vector3 (
 			Random.Range (-myRandomDestination.x, myRandomDestination.x), 
-			Random.Range (-myRandomDestination.y, myRandomDestination.y)
+			Random.Range (-myRandomDestination.y, myRandomDestination.y),
+			0f
 		);
 	}
 
-	public void InitMyTargetList (List<Vector2> t_siteList) {
+	public void InitMyTargetList (List<Vector3> t_siteList) {
 		myTargetList = t_siteList;
 	}
 }

@@ -2,15 +2,15 @@
 using System.Collections;
 
 public class CS_Friend : MonoBehaviour {
-	[SerializeField] Rigidbody2D myRigidbody2D;
+	[SerializeField] Rigidbody myRigidbody;
 	[SerializeField] float mySpeed;
-	private Vector2 myDirection;
+	private Vector3 myDirection;
 	private GameObject myTarget;
-	private Vector2 myTargetPositionDelta;
+	private Vector3 myTargetPositionDelta;
 	// Use this for initialization
 	void Start () {
 		myTarget = GameObject.Find (CS_Global.NAME_PLAYER);
-		myTargetPositionDelta = new Vector2 (Random.Range (-1.0f, 1.0f), Random.Range (-1.0f, 1.0f));
+		myTargetPositionDelta = new Vector3 (Random.Range (-1.0f, 1.0f), Random.Range (-1.0f, 1.0f), 0f);
 		myTargetPositionDelta.Normalize ();
 		//Debug.Log (myTargetPositionDelta.magnitude);
 
@@ -23,13 +23,13 @@ public class CS_Friend : MonoBehaviour {
 		myDirection = myTarget.transform.position - this.transform.position;
 		myDirection += myTargetPositionDelta;
 
-		myRigidbody2D.velocity = myRigidbody2D.velocity.normalized;
+		myRigidbody.velocity = myRigidbody.velocity.normalized;
 //		myRigidbody2D.velocity.Normalize();
-		myRigidbody2D.velocity += myDirection * Time.deltaTime;
-		myRigidbody2D.velocity = myRigidbody2D.velocity.normalized;
+		myRigidbody.velocity += myDirection * Time.deltaTime;
+		myRigidbody.velocity = myRigidbody.velocity.normalized;
 //		myRigidbody2D.velocity.Normalize();
 		//Debug.Log (myRigidbody2D.velocity);
-		myRigidbody2D.velocity *= mySpeed;
+		myRigidbody.velocity *= mySpeed;
 
 	}
 }

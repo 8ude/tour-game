@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class CS_Player : MonoBehaviour {
-	[SerializeField] Rigidbody2D myRigidbody2D;
+	[SerializeField] Rigidbody myRigidbody;
 
-	private Vector2 myDirection;
+	private Vector3 myDirection;
 	private bool onMove;
 
-	private Vector2 moveAxis;
+	private Vector3 moveAxis;
 	[SerializeField] float mySpeed;
 	[SerializeField] float moveGravity;
 	[SerializeField] float moveSensitivity;
@@ -30,11 +30,11 @@ public class CS_Player : MonoBehaviour {
 //		Debug.Log ("ControlMove" + myDirection + " : " +moveAxis);
 
 		//set the speed of the player
-		myRigidbody2D.velocity = moveAxis * mySpeed;
+		myRigidbody.velocity = moveAxis * mySpeed;
 
 		float t_moveAxisReduce = Time.deltaTime * moveGravity;
 		if (moveAxis.magnitude < t_moveAxisReduce)
-			moveAxis = Vector2.zero;
+			moveAxis = Vector3.zero;
 		else
 			moveAxis *= (moveAxis.magnitude - t_moveAxisReduce);
 
@@ -42,7 +42,7 @@ public class CS_Player : MonoBehaviour {
 		//Debug.Log ("ControlMove" + myDirection + " : " +moveAxis);
 	}
 
-	public void SetDirection (Vector2 g_direction) {
+	public void SetDirection (Vector3 g_direction) {
 		myDirection = g_direction;
 	}
 

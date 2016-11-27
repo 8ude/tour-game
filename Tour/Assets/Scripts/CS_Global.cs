@@ -16,7 +16,7 @@ public static class CS_Global {
 	public static float CAMERA_SIZE_DEFAULT = 10.0f;
 	public static float CAMERA_SIZE_MAX = 60.0f;
 
-	public static float DistanceToLine(Vector2 line_p1, Vector2 line_p2, Vector2 p3){
+	public static float DistanceToLine(Vector3 line_p1, Vector3 line_p2, Vector3 p3){
 		//Bennett
 		if (Mathf.Sqrt (
 			    (line_p2.y - line_p1.y) * (line_p2.y - line_p1.y) +

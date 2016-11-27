@@ -7,18 +7,18 @@ public class CS_LoadStage : MonoBehaviour {
 	[SerializeField] GameObject mySite;
 	[SerializeField] int mySiteAmount;
 	private int mySiteFoundAmount = 0;
-	[SerializeField] Vector2 mySitePosition;
+	[SerializeField] Vector3 mySitePosition;
 	[SerializeField] float mySiteDistance;
 	private List<GameObject> mySiteList = new List<GameObject>();
 	//[Space(5)]
 	[Header("Station")]
 	[SerializeField] GameObject myStation;
 	[SerializeField] int myStationAmount;
-	[SerializeField] Vector2 myStationPosition;
+	[SerializeField] Vector3 myStationPosition;
 	[SerializeField] float myStationDistance;
 	[SerializeField] GameObject myStationLine;
 	private List<GameObject> myStationList = new List<GameObject>();
-	private List<Vector2> myStationPositionList = new List<Vector2> ();
+	private List<Vector3> myStationPositionList = new List<Vector3> ();
 	[SerializeField] GameObject mySubway;
 	[SerializeField] int mySubwayAmount;
 	//[Space(5)]
@@ -26,7 +26,7 @@ public class CS_LoadStage : MonoBehaviour {
 	[SerializeField] GameObject myTree;
 	[SerializeField] int myTreeCenterAmount;
 	[SerializeField] int myTreeAmount;
-	[SerializeField] Vector2 myTreePosition;
+	[SerializeField] Vector3 myTreePosition;
 	[SerializeField] float myTreeDistanceToOthers;
 	[SerializeField] float myTreeDistanceMax;
 	[SerializeField] float myTreeDistanceMin;
@@ -35,16 +35,16 @@ public class CS_LoadStage : MonoBehaviour {
 	[Header("Friend")]
 	[SerializeField] GameObject myFriend;
 	[SerializeField] int myFriendAmount;
-	[SerializeField] Vector2 myFriendPosition;
+	[SerializeField] Vector3 myFriendPosition;
 	[SerializeField] float myFriendDistance;
 	private List<GameObject> myFriendList = new List<GameObject>();
 	//[Space(5)]
 	[Header("Worker")]
 	[SerializeField] GameObject myWorker;
 	[SerializeField] int myWorkerAmount;
-	[SerializeField] Vector2 myWorkerPosition;
+	[SerializeField] Vector3 myWorkerPosition;
 	private List<GameObject> myWorkerList = new List<GameObject>();
-	private List<Vector2> myWorkerTargetList = new List<Vector2>();
+	private List<Vector3> myWorkerTargetList = new List<Vector3>();
 
 
 	[Header("Others")]
@@ -72,9 +72,10 @@ public class CS_LoadStage : MonoBehaviour {
 		for (int time = 0; time < 1000; time++) {
 			if (mySiteList.Count < mySiteAmount) {
 				//creat a position
-				Vector2 t_position = new Vector2 (
+				Vector3 t_position = new Vector3 (
 					                     Random.Range (-mySitePosition.x, mySitePosition.x), 
-					                     Random.Range (-mySitePosition.y, mySitePosition.y)
+					                     Random.Range (-mySitePosition.y, mySitePosition.y),
+										 0f
 				                     );
 				//check if it's at a good position
 				bool isGood = true;
@@ -95,9 +96,10 @@ public class CS_LoadStage : MonoBehaviour {
 		for (int time = 0; time < 1000; time++) {
 			if (myStationList.Count < myStationAmount) {
 				//creat a position
-				Vector2 t_position = new Vector2 (
+				Vector3 t_position = new Vector3 (
 					Random.Range (-myStationPosition.x, myStationPosition.x), 
-					Random.Range (-myStationPosition.y, myStationPosition.y)
+					Random.Range (-myStationPosition.y, myStationPosition.y),
+					0f
 				);
 				//check if it's at a good position
 				bool isGood = true;
@@ -126,11 +128,11 @@ public class CS_LoadStage : MonoBehaviour {
 			int t_next = i + 1;
 			if (t_next >= myStationList.Count)
 				t_next -= myStationList.Count;
-			Vector2 t_direction = myStationList [t_next].transform.position - myStationList [i].transform.position;
-			Vector2 t_position = (myStationList [t_next].transform.position + myStationList [i].transform.position) / 2;
+			Vector3 t_direction = myStationList [t_next].transform.position - myStationList [i].transform.position;
+			Vector3 t_position = (myStationList [t_next].transform.position + myStationList [i].transform.position) / 2;
 
 			Quaternion t_quaternion = Quaternion.Euler (0, 0, 
-				Vector2.Angle (Vector2.up, t_direction) * Vector3.Cross (Vector3.up, (Vector3)t_direction).normalized.z);
+				Vector3.Angle (Vector3.up, t_direction) * Vector3.Cross (Vector3.up, (Vector3)t_direction).normalized.z);
 			//Debug.Log (Vector3.Cross (Vector3.up, (Vector3)t_direction));
 			GameObject t_line = Instantiate (myStationLine, t_position, t_quaternion) as GameObject;
 			t_line.transform.localScale = new Vector3 (t_line.transform.localScale.x, t_direction.magnitude, 1);
@@ -157,9 +159,10 @@ public class CS_LoadStage : MonoBehaviour {
 		for (int time = 0; time < 1000; time++) {
 			if (myTreeList.Count < myTreeCenterAmount) {
 				//creat a position
-				Vector2 t_position = new Vector2 (
+				Vector3 t_position = new Vector3 (
 					                     Random.Range (-myTreePosition.x, myTreePosition.x), 
-					                     Random.Range (-myTreePosition.y, myTreePosition.y)
+					                     Random.Range (-myTreePosition.y, myTreePosition.y),
+										 0f
 				                     );
 				//check if it's at a good position
 				bool isGood = true;
@@ -191,7 +194,7 @@ public class CS_LoadStage : MonoBehaviour {
 		for (int time = 0; time < 5000; time++) {
 			if (myTreeList.Count < myTreeAmount) {
 				//creat a position
-				Vector2 t_position = new Vector2 (
+				Vector3 t_position = new Vector3 (
 					Random.Range (-myTreePosition.x, myTreePosition.x), 
 					Random.Range (-myTreePosition.y, myTreePosition.y)
 				);
@@ -200,7 +203,7 @@ public class CS_LoadStage : MonoBehaviour {
 				//check if it's not too far to other trees
 
 				for (int i = 0; i < myTreeList.Count; i++) {
-					if (Vector2.Distance (myTreeList [i].transform.position, t_position) < myTreeDistanceMax) {
+					if (Vector3.Distance (myTreeList [i].transform.position, t_position) < myTreeDistanceMax) {
 						isGood = true;
 						break;
 					}
@@ -234,7 +237,9 @@ public class CS_LoadStage : MonoBehaviour {
 	private void InitFriend () {
 		//create friend at each site
 		for (int i = 0; i < mySiteList.Count; i++) {
-			Vector2 t_position = (Vector2) mySiteList [i].transform.position + Random.insideUnitCircle * myFriendDistance;
+			Vector2 RandomVector = Random.insideUnitCircle;
+			Vector3 t_position = (Vector3) mySiteList [i].transform.position ;
+			t_position += new Vector3 (RandomVector.x, RandomVector.y, 0f) * myFriendDistance;
 			GameObject t_Friend = Instantiate (myFriend, t_position, Quaternion.identity) as GameObject;
 			myFriendList.Add (t_Friend);
 		}
@@ -242,9 +247,10 @@ public class CS_LoadStage : MonoBehaviour {
 		for (int time = 0; time < 1000; time++) {
 			if (myFriendList.Count < myFriendAmount) {
 				//creat a position
-				Vector2 t_position = new Vector2 (
+				Vector3 t_position = new Vector3 (
 					Random.Range (-myFriendPosition.x, myFriendPosition.x), 
-					Random.Range (-myFriendPosition.y, myFriendPosition.y)
+					Random.Range (-myFriendPosition.y, myFriendPosition.y),
+					0f
 				);
 				//check if it's at a good position
 				bool isGood = true;
@@ -276,12 +282,12 @@ public class CS_LoadStage : MonoBehaviour {
 	private void InitWorker () {
 		//create wokers target
 		for (int i = 0; i < mySiteList.Count; i++) {
-			myWorkerTargetList.Add ((Vector2)mySiteList [i].transform.position);
+			myWorkerTargetList.Add ((Vector3)mySiteList [i].transform.position);
 		}
 
 		//create workers everywhere
 		for (int i = 0; i < myWorkerAmount;  i++) {
-			Vector2 t_position = new Vector2 (
+			Vector3 t_position = new Vector3 (
 				Random.Range (-myWorkerPosition.x, myWorkerPosition.x), 
 				Random.Range (-myWorkerPosition.y, myWorkerPosition.y)
 			);
@@ -292,16 +298,16 @@ public class CS_LoadStage : MonoBehaviour {
 		}
 	}
 
-	private bool CheckIfFarEnough (Vector2 g_position, List<GameObject> g_list, float g_distance) {
+	private bool CheckIfFarEnough (Vector3 g_position, List<GameObject> g_list, float g_distance) {
 		for (int i = 0; i < g_list.Count; i++) {
-			if (Vector2.Distance (g_list [i].transform.position, g_position) < g_distance) {
+			if (Vector3.Distance (g_list [i].transform.position, g_position) < g_distance) {
 				return false;
 			}
 		}
 		return true;
 	}
 
-	private bool CheckIfFarEnoughLine (Vector2 g_position, List<GameObject> g_list, float g_distance) {
+	private bool CheckIfFarEnoughLine (Vector3 g_position, List<GameObject> g_list, float g_distance) {
 		if (g_list.Count < 2)
 			return true;
 		

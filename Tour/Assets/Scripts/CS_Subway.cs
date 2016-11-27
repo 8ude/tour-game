@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class CS_Subway : MonoBehaviour {
 
 	private int myNextStationNum;
-	private List<Vector2> myStationPositionList;
+	private List<Vector3> myStationPositionList;
 
 	private List<GameObject> myPassengerList = new List<GameObject>();
 
@@ -14,7 +14,13 @@ public class CS_Subway : MonoBehaviour {
 	[SerializeField] float myVelocity;
 	[SerializeField] float myStopTime;
 	private float myTimer;
+	private bool _atStation = false;
 
+	GameObject playerObjecct;
+
+	void Start () {
+
+	}
 
 	void Update () {
 		if (!isOn)
@@ -25,14 +31,15 @@ public class CS_Subway : MonoBehaviour {
 			return;
 		}
 
-		Vector2 t_myPosition = this.transform.position;
-		Vector2 t_myTargetPosition = myStationPositionList [myNextStationNum];
-		Vector2 t_direction = t_myTargetPosition - t_myPosition;
-		Vector2 t_deltaPosition;
+		Vector3 t_myPosition = this.transform.position;
+		Vector3 t_myTargetPosition = myStationPositionList [myNextStationNum];
+		Vector3 t_direction = t_myTargetPosition - t_myPosition;
+		Vector3 t_deltaPosition;
 
-		if (Vector2.Distance (t_myPosition, t_myTargetPosition) < myVelocity * Time.deltaTime) {
+		if (Vector3.Distance(t_myPosition, t_myTargetPosition) < myVelocity * Time.deltaTime) {
 			//arrived
-			t_deltaPosition = t_direction.normalized * Vector2.Distance (t_myPosition, t_myTargetPosition);
+			_atStation = true;
+			t_deltaPosition = t_direction.normalized * Vector3.Distance (t_myPosition, t_myTargetPosition);
 
 			myTimer = myStopTime;
 			myNextStationNum++;
@@ -40,6 +47,7 @@ public class CS_Subway : MonoBehaviour {
 				myNextStationNum -= myStationPositionList.Count;
 			}
 		} else {
+			_atStation = false;
 			t_deltaPosition = t_direction.normalized * myVelocity * Time.deltaTime;
 		}
 			
@@ -52,22 +60,22 @@ public class CS_Subway : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D (Collider2D other) {
-		if (other.tag == CS_Global.TAG_PLAYER || other.tag == CS_Global.TAG_FRIEND || other.tag == CS_Global.TAG_WORKER) {
+	void OnTriggerEnter (Collider other) {
+		if ((other.tag == CS_Global.TAG_PLAYER || other.tag == CS_Global.TAG_FRIEND || other.tag == CS_Global.TAG_WORKER) && _atStation) {
 			Debug.Log ("EnterSubway:" + other.tag);
 			if (myPassengerList.Contains (other.gameObject) == false)
 				myPassengerList.Add (other.gameObject);
 		}
 	}
 
-	void OnTriggerExit2D (Collider2D other) {
-		if (other.tag == CS_Global.TAG_PLAYER || other.tag == CS_Global.TAG_FRIEND || other.tag == CS_Global.TAG_WORKER) {
+	void OnTriggerExit (Collider other) {
+		if (other.tag == CS_Global.TAG_PLAYER || other.tag == CS_Global.TAG_FRIEND || other.tag == CS_Global.TAG_WORKER)  {
 			if (myPassengerList.Contains (other.gameObject))
 				myPassengerList.Remove (other.gameObject);
 		}
 	}
 
-	public void Init (List<Vector2> g_stationPositionList, int g_nextStationNumber) {
+	public void Init (List<Vector3> g_stationPositionList, int g_nextStationNumber) {
 		myStationPositionList = g_stationPositionList;
 		myNextStationNum = g_nextStationNumber;
 		isOn = true;

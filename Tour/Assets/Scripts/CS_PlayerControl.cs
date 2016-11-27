@@ -30,9 +30,9 @@ public class CS_PlayerControl : MonoBehaviour {
 		//Vector2 t_direction = UICamera.ScreenToWorldPoint (Input.mousePosition) - this.transform.position;
 		Vector3 t_position = Camera.main.ScreenToWorldPoint (Input.mousePosition) - Camera.main.GetComponent<CS_Camera>().GetDeltaPostion();
 		float t_positionY = t_position.y - t_position.z * 1.717f;
-		t_position = new Vector3 (t_position.x, t_positionY, 0);
+		t_position = new Vector3 (t_position.x, t_positionY, 0f);
 
-		Vector2 t_direction = t_position - myPlayer.transform.position;
+		Vector3 t_direction = t_position - myPlayer.transform.position;
 		//t_direction = new Vector2(t_direction.x * 0.58f, t_direction.y);
 		t_direction.Normalize ();
 		//Debug.Log (t_direction);
