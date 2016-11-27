@@ -21,7 +21,9 @@ public class CS_Friend : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		myDirection = myTarget.transform.position - this.transform.position;
+
 		myDirection += myTargetPositionDelta;
+
 
 		myRigidbody.velocity = myRigidbody.velocity.normalized;
 //		myRigidbody2D.velocity.Normalize();
