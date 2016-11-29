@@ -11,6 +11,11 @@ public class CS_AudioManager : MonoBehaviour {
 
 	[SerializeField] AudioSource myAudioSource;
 
+	[SerializeField] AudioSource BassSource;
+	[SerializeField] AudioSource LowMidSource;
+	[SerializeField] AudioSource HiMidSource;
+	[SerializeField] AudioSource HiSource;
+
 	//========================================================================
 	public static CS_AudioManager Instance {
 		get { 
@@ -81,5 +86,7 @@ public class CS_AudioManager : MonoBehaviour {
 	public void StopBGM () {
 		myAudioSource.Stop ();
 	}
+
+
 
 }

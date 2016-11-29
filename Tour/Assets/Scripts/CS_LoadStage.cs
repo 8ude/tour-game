@@ -50,8 +50,15 @@ public class CS_LoadStage : MonoBehaviour {
 	[Header("Others")]
 	[SerializeField] GameObject TX_Timer;
 	[SerializeField] GameObject TX_Score;
+
 	private float Timer = 0;
 	private float Score = 0;
+
+	public int FriendScore = 0;
+	public int TreeScore = 0;
+	public int StationScore = 0;
+	public int SiteScore = 0;
+
 	private float ScoreTotal = 0;
 
 	[SerializeField] GameObject UI_Pause;
@@ -376,5 +383,22 @@ public class CS_LoadStage : MonoBehaviour {
 
 	public void AddScore (int g_score) {
 		Score += g_score;
+	}
+
+	public void AddFriendScore () {
+		FriendScore ++;
+
+	}
+
+	public void AddTreeScore () {
+		TreeScore++;
+	}
+
+	public void AddStationScore () {
+		StationScore++;
+	}
+
+	public void AddSiteScore () {
+		SiteScore++;
 	}
 }
