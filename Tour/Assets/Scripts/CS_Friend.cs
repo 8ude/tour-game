@@ -10,7 +10,7 @@ public class CS_Friend : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		myTarget = GameObject.Find (CS_Global.NAME_PLAYER);
-		myTargetPositionDelta = new Vector3 (Random.Range (-1.0f, 1.0f), Random.Range (-1.0f, 1.0f), 0f);
+		myTargetPositionDelta = new Vector3 (Random.Range (-1.0f, 1.0f), Random.Range (-1.2f, 0f), 0f);
 		myTargetPositionDelta.Normalize ();
 		//Debug.Log (myTargetPositionDelta.magnitude);
 
