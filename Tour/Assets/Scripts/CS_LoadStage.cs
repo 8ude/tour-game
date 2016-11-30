@@ -59,17 +59,27 @@ public class CS_LoadStage : MonoBehaviour {
 	public int StationScore = 0;
 	public int SiteScore = 0;
 
+	int natureTotal = 0;
+	int cityTotal = 0;
+
 	private float ScoreTotal = 0;
+	public bool _proceduralScene = false;
+
+	// 0.0 = nature
+	// 1.0 = city 
+	public float cityScale = 0.5f;
 
 	[SerializeField] GameObject UI_Pause;
 
 	// Use this for initialization
 	void Start () {
-		InitSite ();
-		InitStation ();
-		InitTree ();
-		InitFriend ();
-		InitWorker ();
+		if (_proceduralScene) {
+			InitSite ();
+			InitStation ();
+			InitTree ();
+			InitFriend ();
+			InitWorker ();
+		}
 
 		HideInfo ();
 		HidePause ();
@@ -339,6 +349,11 @@ public class CS_LoadStage : MonoBehaviour {
 			ScoreTotal = Score - Timer;
 			TX_Score.GetComponent<TextMesh> ().text = ScoreTotal.ToString ("0");
 		}
+
+		natureTotal = TreeScore + FriendScore;
+		cityTotal = (StationScore * 5) + (SiteScore * 5);
+		ScoreTotal = (float) natureTotal + cityTotal;
+		cityScale = (float) cityTotal / ScoreTotal;
 	}
 
 	public void FindASite () {
