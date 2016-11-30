@@ -11,15 +11,12 @@ public class Controller : MonoBehaviour {
 	Vector3 moveInput;
 	Vector3 moveVelocity;
 
-	Camera mainCamera;
-
-
-
+//	Camera mainCamera;
 
 	void Start(){
 
 //		playerRB = GetComponent<Rigidbody> ();
-		mainCamera = FindObjectOfType<Camera> ();
+//		mainCamera = FindObjectOfType<Camera> ();
 		
 	}
 
@@ -27,7 +24,6 @@ public class Controller : MonoBehaviour {
 	void Update () {
 
 		moveInput = new Vector3(Input.GetAxis("Horizontal_Joy"), Input.GetAxis("Vertical_Joy"),0f);
-
 		moveVelocity = moveInput * moveSpeed * 100;
 
 	}
