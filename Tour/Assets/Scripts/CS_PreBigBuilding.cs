@@ -11,7 +11,7 @@ public class CS_PreBigBuilding : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 
 		if (other.tag == CS_Global.TAG_PLAYER || other.tag == CS_Global.TAG_FRIEND) {
-			Instantiate (myObject, this.transform.position, Quaternion.identity);
+			Instantiate (myObject, this.transform.position, Quaternion.Euler (0, 0, 45));
 			for (int i = 0; i < numSpawns; i ++) {
 
 
@@ -25,10 +25,10 @@ public class CS_PreBigBuilding : MonoBehaviour {
 					spawnY *= -1;
 				}
 
-				Vector3 spawnPos = new Vector3 (this.transform.position.x + spawnX, this.transform.position.y + spawnY, 0f); 
+				Vector3 spawnPos = new Vector3 (this.transform.position.x + spawnX, this.transform.position.y + spawnY, -0.5f); 
 
 
-				Instantiate (mySpawns, spawnPos, Quaternion.identity);
+				Instantiate (mySpawns, spawnPos, Quaternion.Euler (0, 0, 45));
 			}
 			Destroy (this.gameObject);
 		}
