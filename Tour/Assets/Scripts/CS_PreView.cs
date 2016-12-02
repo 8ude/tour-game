@@ -6,13 +6,14 @@ public class CS_PreView : MonoBehaviour {
 	[SerializeField] GameObject selfMesh;
 
 	// components for beginning animation
-	Vector3 beginScale = new Vector3 (1, 1, 1);
+	Vector3 beginScale;
 	float timer = 0f;
 	float spawnTime = 1f;
 
 	void Start () {
 
 		//objects seem to grow out of the ground when they are spawned
+		beginScale = transform.localScale;
 		transform.localScale = new Vector3(0f,0f,0f);
 
 	}
