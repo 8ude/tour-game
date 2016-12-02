@@ -25,7 +25,7 @@ GameObject:
   - 114: {fileID: 114000010727242744}
   m_Layer: 0
   m_Name: PreBuilding
-  m_TagString: Untagged
+  m_TagString: PreBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012307653392}
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 126.8, y: 3.1994, z: -0.19}
-  m_LocalScale: {x: 1.2503296, y: 1.2503296, z: 0.47071952}
+  m_LocalPosition: {x: 77, y: -14, z: -0.5}
+  m_LocalScale: {x: 4.2255087, y: 3.492714, z: 0.47071952}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 9e06a0d0115e24225a476b2e6f0988f2, type: 2}
+  - {fileID: 2100000, guid: 659951f36a747480784d8f9094a6cfaf, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -89,8 +89,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.5751438, y: 3.077529, z: 1}
-  m_Center: {x: 0.10414165, y: 0.27207088, z: -0}
+  m_Size: {x: 2.1188905, y: 2.3301067, z: 1}
+  m_Center: {x: 0.036573756, y: -0.07278301, z: 0}
 --- !u!114 &114000010727242744
 MonoBehaviour:
   m_ObjectHideFlags: 1
