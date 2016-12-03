@@ -14,15 +14,19 @@ public class CS_ShadowDelay : MonoBehaviour {
 	}
 
 	void Start () {
-
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		DOTween.To(()=> myFloat, x=> myFloat = x, 5.5f, 2.9f);
-		proj.farClipPlane = myFloat;
+			TweenShadow ();
+			proj.farClipPlane = myFloat;
 	}
 
-
+	public void TweenShadow (){
+		if (myFloat == 0) {
+			DOTween.To (() => myFloat, x => myFloat = x, 5.5f, 2.9f);
+		}
+	}
 
 }

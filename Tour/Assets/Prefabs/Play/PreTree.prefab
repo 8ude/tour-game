@@ -24,7 +24,7 @@ GameObject:
   - 135: {fileID: 135000012998610976}
   m_Layer: 10
   m_Name: PreTree
-  m_TagString: Untagged
+  m_TagString: PreTree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

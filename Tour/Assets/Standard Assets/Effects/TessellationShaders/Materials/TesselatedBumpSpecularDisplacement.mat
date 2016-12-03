@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: TesselatedBumpSpecularDisplacement
-  m_Shader: {fileID: 4800000, guid: 0a4b0bce1e250a14bb534d70bce205fa, type: 3}
+  m_Shader: {fileID: 4800000, guid: 963484209d11fd7f110076aa44295342, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -18,14 +18,14 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 2800000, guid: 17da6d53ec93a0444bd0f751b1d02477, type: 3}
+        m_Texture: {fileID: 2800000, guid: 641bb2dce818a8a499b537a1963889ac, type: 3}
         m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MainTex
       second:
         m_Texture: {fileID: 2800000, guid: 68386fc9897223346a683105b4dc1662, type: 3}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 9, y: 0}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _ParallaxMap
@@ -35,14 +35,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
+        name: _BumpAmt
+      second: 9
+    - first:
         name: _EdgeLength
-      second: 3
+      second: 50
     - first:
         name: _Parallax
-      second: 0.354558
+      second: 1
     - first:
         name: _Shininess
-      second: 0.03
+      second: 1
     m_Colors:
     - first:
         name: _Color
