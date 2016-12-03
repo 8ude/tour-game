@@ -122,7 +122,7 @@ GameObject:
   - 114: {fileID: 114000012618542514}
   m_Layer: 0
   m_Name: BigTree
-  m_TagString: Tree
+  m_TagString: BigTree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,7 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3f6ebac24fc4d4da6d7f605d963d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myScore: 3
 --- !u!114 &114000011395193718
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -9,6 +9,7 @@ public static class CS_Global {
 	public static string NAME_LOADSTAGE = "LoadStage";
 	public static string NAME_GAMEMANAGER = "GameManager";
 
+
 	public static string TAG_PLAYER = "Player";
 	public static string TAG_FRIEND = "Friend";
 	public static string TAG_WORKER = "Worker";

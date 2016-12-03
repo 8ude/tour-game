@@ -7,51 +7,51 @@ public class CS_PlayLowMusic : MonoBehaviour {
 	public 	AudioSource thisSource;
 	public AudioClip nextClip;
 
-	public CS_LoadStage loadStage;
+	public CS_GameManager gameMan;
 	public float volumeLevel;
 	public float maxVolume = 0.7f;
 	int index = 0;
 
-	public int sites;
-	public int sitesLevelMid, sitesLevelHi, sitesLevelMax;
+	public int bigTrees;
+	public int bigTLevelMid, bigTLevelHi, bigTLevelMax;
 
 	void Start() {
 
 		nextClip = lowClips [index];
 
-		loadStage = GameObject.Find (CS_Global.NAME_LOADSTAGE).GetComponent<CS_LoadStage> ();
+		gameMan = GameObject.Find (CS_Global.NAME_GAMEMANAGER).GetComponent<CS_GameManager> ();
 		thisSource = gameObject.GetComponent<AudioSource> ();
 		thisSource.volume = 0f;
 	}
 	void Update() {
-		int prevSites = sites;
-		sites = loadStage.SiteScore;
+		int prevBigTrees = bigTrees;
+		bigTrees = gameMan.BigTreeScore;
 
-		if (prevSites < sites) {
-			IncreaseSites ();
+		if (prevBigTrees < bigTrees) {
+			IncreaseBigTrees ();
 		}
 
 	}
 
-	void IncreaseSites () {
+	void IncreaseBigTrees () {
 
-		if (sites == 1) {
+		if (bigTrees == 1) {
 
 			StartCoroutine (FadeVolume ());
 
 
-		} else if (sites == sitesLevelMid) {
+		} else if (bigTrees == bigTLevelMid) {
 
 			index = 1;
 			nextClip = lowClips [index];
 			StartCoroutine(NextClip ());
 
-		} else if (sites == sitesLevelHi) {
+		} else if (bigTrees == bigTLevelHi) {
 			index = 2;
 			nextClip = lowClips [index];
 			StartCoroutine(NextClip ());
 
-		} else if (sites == sitesLevelMax) {
+		} else if (bigTrees == bigTLevelMax) {
 			index = 3;
 			nextClip = lowClips [index];
 			StartCoroutine(NextClip ());

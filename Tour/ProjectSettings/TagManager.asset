@@ -12,6 +12,9 @@ TagManager:
   - Site
   - PreBuilding
   - Building
+  - PreTree
+  - BigTree
+  - BigBuilding
   layers:
   - Default
   - TransparentFX

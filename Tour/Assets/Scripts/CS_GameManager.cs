@@ -5,11 +5,15 @@ using System.Collections.Generic;
 public class CS_GameManager : MonoBehaviour {
 
 	public GameObject city;
-	public int FriendScore, TreeScore, StationScore, SiteScore, BuildingScore;
+	public List<GameObject> preObjects;
 
-	public int Score = 0;
+	public int numTrees, numBigTrees, numFriends, numBuildings, numBigBuildings, numStations;
+
+	public int FriendScore, TreeScore, BigTreeScore, StationScore, BuildingScore, BigBuildingScore;
+
 	public int MaxScore = 100;
 	public float ScoreTotal = 0;
+	bool _atMaxScore;
 
 	int natureTotal = 0;
 	int cityTotal = 0;
@@ -25,54 +29,93 @@ public class CS_GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		FriendScore = 0;
-		TreeScore = 0;
-		StationScore = 0;
-		SiteScore = 0;
-		BuildingScore = 0;
+		numTrees = 0;
+		numBigTrees = 0;
+		numFriends = 0;
+		numBuildings = 0;
+		numBigBuildings = 0;
+		numStations = 0;
 		ScoreTotal = 0;
+		_atMaxScore = false;
+
+		preObjects = new List<GameObject>();
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		GameObject[] preBuildings;
-		preBuildings = GameObject.FindGameObjectsWithTag ("PreBuilding");
-		if (preBuildings.Length == 0) {
-			city.SendMessage ("GeneratePreBuilding");
+		preObjects.Clear ();
+
+		if (ScoreTotal >= MaxScore) {
+			_atMaxScore = true;
 		}
 
-		natureTotal = TreeScore + FriendScore;
-		cityTotal = StationScore + BuildingScore;
+		GameObject[] preBuildings;
+
+		preBuildings = GameObject.FindGameObjectsWithTag ("PreBuilding");
+
+		if (preBuildings.Length == 0 && !_atMaxScore) {
+			city.SendMessage ("GeneratePreBuilding");
+		}
+		for (int i = 0; i < preBuildings.Length; i++) {
+			preObjects.Add(preBuildings[i]);
+		}
+
+		GameObject[] preTrees;
+
+		preTrees = GameObject.FindGameObjectsWithTag ("PreTree");
+
+		for (int i = 0; i < preTrees.Length; i++) {
+			preObjects.Add (preTrees [i]);
+		}
+
+		if (_atMaxScore) {
+			// destroy all preSites if we're at max score
+			foreach (GameObject preObject in preObjects) {
+				Destroy (preObject);
+
+			}
+		}
+
+		//clear out preObjects and re-populate; this is inefficient, but I'm not sure of a
+		// better way to prevent duplicates
+
+
+		//update scores and adjust scaling accordingly
+		natureTotal = (TreeScore * numTrees) + (FriendScore * numFriends) + (BigTreeScore * numBigTrees);
+		cityTotal = (StationScore * numStations) + (BuildingScore * numBuildings) + (BigBuildingScore * numBigBuildings);
 		ScoreTotal = (float) natureTotal + cityTotal;
 		cityScale = (float) cityTotal / ScoreTotal;
 		IncreaseCameraSize ();
 			
 	}
 
-	public void AddScore (int g_score) {
-		Score += g_score;
+	//Methods for Adding Scores, called by CS_AddScore at Start when object is instantiated
+
+
+	public void AddFriendScore () {
+		numFriends++;
 	}
 
-	public void AddFriendScore (int g_score) {
-		FriendScore += g_score;
+	public void AddTreeScore () {
+		numTrees++;
 	}
 
-	public void AddTreeScore (int g_score) {
-		TreeScore+= g_score;
+	public void AddBigTreeScore() {
+		numBigTrees++;
 	}
 
-	public void AddStationScore (int g_score) {
-		StationScore+= g_score;
+	public void AddStationScore () {
+		StationScore++;
 	}
 
-	public void AddSiteScore (int g_score) {
-		SiteScore+= g_score;
+	public void AddBuildingScore() {
+		BuildingScore++;
 	}
 
-	public void AddBuildingScore(int g_score) {
-		BuildingScore+= g_score;
+	public void AddBigBuildingScore() {
+		numBigBuildings++;
 	}
 
 	public void IncreaseCameraSize() {
