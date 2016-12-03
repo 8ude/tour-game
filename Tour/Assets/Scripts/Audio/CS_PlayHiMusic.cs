@@ -8,7 +8,7 @@ public class CS_PlayHiMusic : MonoBehaviour {
 	public 	AudioSource thisSource;
 	public AudioClip nextClip;
 
-	public CS_LoadStage loadStage;
+	public CS_GameManager gameMan;
 	public float volumeLevel;
 	public float maxVolume = 0.5f;
 	int index = 0;
@@ -20,13 +20,13 @@ public class CS_PlayHiMusic : MonoBehaviour {
 
 		nextClip = hiClips [index];
 
-		loadStage = GameObject.Find (CS_Global.NAME_LOADSTAGE).GetComponent<CS_LoadStage> ();
+		gameMan = GameObject.Find (CS_Global.NAME_GAMEMANAGER).GetComponent<CS_GameManager> ();
 		thisSource = gameObject.GetComponent<AudioSource> ();
 		thisSource.volume = 0f;
 	}
 	void Update() {
 		int prevFriends = friends;
-		friends = loadStage.FriendScore;
+		friends = gameMan.numFriends;
 
 		if (prevFriends < friends) {
 			IncreaseFriends ();

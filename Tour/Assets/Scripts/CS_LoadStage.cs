@@ -395,25 +395,5 @@ public class CS_LoadStage : MonoBehaviour {
 		UI_Pause.SetActive (false);
 		Time.timeScale = 1;
 	}
-
-	public void AddScore (int g_score) {
-		Score += g_score;
-	}
-
-	public void AddFriendScore () {
-		FriendScore ++;
-
-	}
-
-	public void AddTreeScore () {
-		TreeScore++;
-	}
-
-	public void AddStationScore () {
-		StationScore++;
-	}
-
-	public void AddSiteScore () {
-		SiteScore++;
-	}
+		
 }

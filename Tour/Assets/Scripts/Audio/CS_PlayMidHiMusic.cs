@@ -11,7 +11,7 @@ public class CS_PlayMidHiMusic : MonoBehaviour {
 	//int index = 0;
 	public 	AudioSource thisSource;
 	public AudioClip nextClip;
-	public CS_LoadStage loadStage;
+	public CS_GameManager gameMan;
 	public float volumeLevel;
 	public float maxVolume = 0.3f;
 	int index = 0;
@@ -22,13 +22,13 @@ public class CS_PlayMidHiMusic : MonoBehaviour {
 	void Start() {
 
 		nextClip = midHiClips [index];
-		loadStage = GameObject.Find (CS_Global.NAME_LOADSTAGE).GetComponent<CS_LoadStage> ();
+		gameMan = GameObject.Find (CS_Global.NAME_GAMEMANAGER).GetComponent<CS_GameManager> ();
 		thisSource = gameObject.GetComponent<AudioSource> ();
 		thisSource.volume = 0f;
 	}
 	void Update() {
 		int prevTrees = trees;
-		trees = loadStage.TreeScore;
+		trees = gameMan.numTrees;
 
 		if (prevTrees < trees) {
 			IncreaseTrees ();
