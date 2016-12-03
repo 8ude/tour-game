@@ -11,6 +11,7 @@ TagManager:
   - Station
   - Site
   - PreBuilding
+  - Building
   layers:
   - Default
   - TransparentFX

@@ -529,7 +529,7 @@ MonoBehaviour:
   bigBuildingSpawn: {fileID: 1000011603954974, guid: 4f8fb304511a9433d9e81e55dfe95e60,
     type: 2}
   minDistance: 23.75
-  zOff: 0
+  zOff: -1.1
 --- !u!1 &542866919
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +766,6 @@ GameObject:
   - 4: {fileID: 606683887}
   - 114: {fileID: 606683886}
   - 114: {fileID: 606683888}
-  - 114: {fileID: 606683889}
   m_Layer: 0
   m_Name: LoadStage
   m_TagString: Untagged
@@ -854,18 +853,6 @@ MonoBehaviour:
   playRandomly: 0
   playOnce: 0
   playVolume: 0.2
---- !u!114 &606683889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 606683885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73038fbf5e2854f1cb97ce5fdf27188b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  city: {fileID: 438156613}
 --- !u!4 &712915639 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: c3efe6b611a514979b0f8cf6ae19ce14, type: 3}
@@ -1555,6 +1542,58 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3efe6b611a514979b0f8cf6ae19ce14, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1884848247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1884848249}
+  - 114: {fileID: 1884848248}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1884848248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1884848247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73038fbf5e2854f1cb97ce5fdf27188b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  city: {fileID: 438156613}
+  FriendScore: 0
+  TreeScore: 0
+  StationScore: 0
+  SiteScore: 0
+  BuildingScore: 0
+  Score: 0
+  MaxScore: 300
+  ScoreTotal: 0
+  minCameraSize: 10
+  maxCameraSize: 50
+  cityScale: 0.5
+--- !u!4 &1884848249
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1884848247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 81.33122, y: -5.979809, z: 13.121238}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!4 &1909935722 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: c3efe6b611a514979b0f8cf6ae19ce14, type: 3}

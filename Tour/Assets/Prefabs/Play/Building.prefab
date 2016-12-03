@@ -59,9 +59,10 @@ GameObject:
   - 65: {fileID: 65000010358772536}
   - 23: {fileID: 23000013385389164}
   - 95: {fileID: 95000011350210586}
+  - 114: {fileID: 114000014089416368}
   m_Layer: 0
   m_Name: Building
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -508,3 +509,15 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000014089416368
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012393895286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3f6ebac24fc4d4da6d7f605d963d34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myScore: 2

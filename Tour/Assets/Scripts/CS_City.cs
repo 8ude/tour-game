@@ -18,7 +18,7 @@ public class CS_City : MonoBehaviour {
 	[SerializeField] GameObject bigBuildingSpawn;
 	//This is the minimum distance between building site corners
 	[SerializeField] float minDistance = 23.75f;
-	[SerializeField] float zOff = -1.1;
+	[SerializeField] float zOff = -1.1f;
 	int index = 0;
 
 	void Awake() {
