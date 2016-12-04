@@ -2447,7 +2447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1890527887
 Transform:
   m_ObjectHideFlags: 0
@@ -2650,6 +2650,11 @@ Prefab:
       propertyPath: city
       value: 
       objectReference: {fileID: 438156613}
+    - target: {fileID: 114000010304468630, guid: fb9b1778a7937457c8bb7d8d2945f13b,
+        type: 2}
+      propertyPath: maxCameraSize
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb9b1778a7937457c8bb7d8d2945f13b, type: 2}
   m_IsPrefabParent: 0

@@ -26,7 +26,7 @@ public class CS_Subway : MonoBehaviour {
 
 		myStationPositionList = new List<Vector3> ();
 		for (int i = 0; i < myStations.Length; i++) {
-			Debug.Log (myStations [i].gameObject.transform.position);
+			
 			myStationPositionList.Add (myStations [i].gameObject.transform.position);
 		}
 		Init (myStationPositionList);

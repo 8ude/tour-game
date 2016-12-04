@@ -68,5 +68,5 @@ MonoBehaviour:
   MaxScore: 100
   ScoreTotal: 0
   minCameraSize: 10
-  maxCameraSize: 100
+  maxCameraSize: 30
   cityScale: 0.5
