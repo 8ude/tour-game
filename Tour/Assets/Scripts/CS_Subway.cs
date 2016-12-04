@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class CS_Subway : MonoBehaviour {
 
 	private int myNextStationNum;
+
+	public GameObject[] myStations;
 	private List<Vector3> myStationPositionList;
 
 	private List<GameObject> myPassengerList = new List<GameObject>();
@@ -12,13 +14,26 @@ public class CS_Subway : MonoBehaviour {
 	private bool isOn = false;
 
 	[SerializeField] float myVelocity;
+	[SerializeField] float maxVelocity;
+	[SerializeField] float minVelocity;
 	[SerializeField] float myStopTime;
 	private float myTimer;
 	private bool _atStation = false;
 
 	GameObject playerObjecct;
 
+	void Awake() {
+
+		myStationPositionList = new List<Vector3> ();
+		for (int i = 0; i < myStations.Length; i++) {
+			Debug.Log (myStations [i].gameObject.transform.position);
+			myStationPositionList.Add (myStations [i].gameObject.transform.position);
+		}
+		Init (myStationPositionList);
+	}
+
 	void Start () {
+		myNextStationNum = 0;
 
 	}
 
@@ -75,9 +90,9 @@ public class CS_Subway : MonoBehaviour {
 		}
 	}
 
-	public void Init (List<Vector3> g_stationPositionList, int g_nextStationNumber) {
+	public void Init (List<Vector3> g_stationPositionList) {
 		myStationPositionList = g_stationPositionList;
-		myNextStationNum = g_nextStationNumber;
+		//myNextStationNum = g_nextStationNumber;
 		isOn = true;
 	} 
 }

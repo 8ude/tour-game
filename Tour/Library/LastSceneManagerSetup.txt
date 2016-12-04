@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/LevelDesignTest_HosniVersion.unity
+=======
+- path: Assets/Scenes/LevelDesignTest.unity
+>>>>>>> Corey
   isLoaded: 1
   isActive: 1

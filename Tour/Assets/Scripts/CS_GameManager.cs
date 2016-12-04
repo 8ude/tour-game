@@ -55,9 +55,7 @@ public class CS_GameManager : MonoBehaviour {
 
 		preBuildings = GameObject.FindGameObjectsWithTag ("PreBuilding");
 
-		if (preBuildings.Length == 0 && !_atMaxScore) {
-			city.SendMessage ("GeneratePreBuilding");
-		}
+
 		for (int i = 0; i < preBuildings.Length; i++) {
 			preObjects.Add(preBuildings[i]);
 		}
@@ -65,6 +63,16 @@ public class CS_GameManager : MonoBehaviour {
 		GameObject[] preTrees;
 
 		preTrees = GameObject.FindGameObjectsWithTag ("PreTree");
+
+		if (preBuildings.Length == 0 && !_atMaxScore) {
+			city.SendMessage ("GeneratePreBuilding");
+			//if there is more than one pre tree, destroy it upon activating a city
+			//segment
+			if (preTrees.Length > 1) {
+
+				Destroy (preTrees [preTrees.Length - 1]);
+			}
+		}
 
 		for (int i = 0; i < preTrees.Length; i++) {
 			preObjects.Add (preTrees [i]);
@@ -78,8 +86,7 @@ public class CS_GameManager : MonoBehaviour {
 			}
 		}
 
-		//clear out preObjects and re-populate; this is inefficient, but I'm not sure of a
-		// better way to prevent duplicates
+
 
 
 		//update scores and adjust scaling accordingly
@@ -107,11 +114,11 @@ public class CS_GameManager : MonoBehaviour {
 	}
 
 	public void AddStationScore () {
-		StationScore++;
+		numStations++;
 	}
 
 	public void AddBuildingScore() {
-		BuildingScore++;
+		numBuildings++;
 	}
 
 	public void AddBigBuildingScore() {

@@ -26,7 +26,8 @@ public class CS_PlayBuildingMusic : MonoBehaviour {
 	}
 	void Update() {
 		int prevFriends = friends;
-		friends = gameMan.numFriends;
+		friends = 1;
+		//friends = gameMan.numFriends;
 
 		if (prevFriends < friends) {
 			IncreaseFriends ();
