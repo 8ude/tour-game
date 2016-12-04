@@ -25,7 +25,7 @@ GameObject:
   - 114: {fileID: 114000011627264970}
   m_Layer: 0
   m_Name: PreBigBuilding
-  m_TagString: Untagged
+  m_TagString: PreBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,10 +36,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011603954974}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.13, y: 9.87, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 0.1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: -1.1}
+  m_LocalScale: {x: 8, y: 8, z: 0.08}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 9e06a0d0115e24225a476b2e6f0988f2, type: 2}
+  - {fileID: 2100000, guid: 659951f36a747480784d8f9094a6cfaf, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -89,8 +89,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3366766, y: 1.2851646, z: 36.455856}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3998321, y: 1.3740913, z: 14.759636}
+  m_Center: {x: 0.020694422, y: 0.018090084, z: 6.723502}
 --- !u!114 &114000011627264970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,4 +105,4 @@ MonoBehaviour:
   myObject: {fileID: 1000013721464984, guid: 3cabe5b965c33449bacb0044ce6a860f, type: 2}
   mySpawns: {fileID: 1000012307653392, guid: a50e286362ff543deaf5db6c1fc62ddf, type: 2}
   numSpawns: 4
-  offset: 5
+  offset: 10

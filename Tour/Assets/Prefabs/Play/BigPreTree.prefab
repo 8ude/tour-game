@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010386390490}
   - 212: {fileID: 212000010210514402}
-  - 114: {fileID: 114000012642414660}
   - 135: {fileID: 135000014097723444}
+  - 114: {fileID: 114000010055913436}
   m_Layer: 10
   m_Name: BigPreTree
-  m_TagString: Untagged
+  m_TagString: PreTrees
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,13 +36,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013717786282}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.4, y: -318.2, z: -359.42865}
+  m_LocalPosition: {x: -34.4, y: 75.7, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000012642414660
+--- !u!114 &114000010055913436
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -50,11 +50,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013717786282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e07a978f6dd4301a2e7710b7845484, type: 3}
+  m_Script: {fileID: 11500000, guid: a5edc71b4001444ae993faf87f9f9ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myObject: {fileID: 1000013188306810, guid: ab663357c31604bdba38e17f30fdf5cd, type: 2}
-  selfMesh: {fileID: 0}
+  myObject: {fileID: 1000013188306810, guid: a6501ec54493344bc8314a1c58604ad6, type: 2}
+  mySpawns: {fileID: 1000010143859054, guid: b92a6aa2ce8c1467d84a44a7e5bd37ef, type: 2}
+  numSpawns: 6
 --- !u!135 &135000014097723444
 SphereCollider:
   m_ObjectHideFlags: 1

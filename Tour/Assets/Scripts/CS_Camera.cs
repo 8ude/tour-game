@@ -9,7 +9,7 @@ public class CS_Camera : MonoBehaviour {
 	[SerializeField] float myPreMoveDistance;
 	private Vector3 myPreMovePosition;
 
-	private float mySize = CS_Global.CAMERA_SIZE_DEFAULT;
+	[SerializeField] float mySize = CS_Global.CAMERA_SIZE_DEFAULT;
 	[SerializeField] float mySizeRatio;						//0-1	0: don't change	1:fast change 
 
 	// Use this for initialization

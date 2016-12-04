@@ -7,7 +7,7 @@ public class CS_PlayMidMusic : MonoBehaviour {
 	public 	AudioSource thisSource;
 	public AudioClip nextClip;
 
-	public CS_LoadStage loadStage;
+	public CS_GameManager gameMan;
 
 	int index = 0;
 
@@ -18,13 +18,13 @@ public class CS_PlayMidMusic : MonoBehaviour {
 
 		nextClip = midClips [index];
 
-		loadStage = GameObject.Find (CS_Global.NAME_LOADSTAGE).GetComponent<CS_LoadStage> ();
+		gameMan = GameObject.Find (CS_Global.NAME_GAMEMANAGER).GetComponent<CS_GameManager> ();
 		thisSource = gameObject.GetComponent<AudioSource> ();
 		thisSource.volume = 0.6f;
 	}
 	void Update() {
 		int prevStations = stations;
-		stations = loadStage.StationScore;
+		stations = gameMan.numStations;
 
 		if (prevStations < stations) {
 			IncreaseStations ();
