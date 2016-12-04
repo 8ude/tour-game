@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/TreeTest.unity
+- path: Assets/Scenes/LevelDesignTest_HosniVersion.unity
   isLoaded: 1
   isActive: 1
