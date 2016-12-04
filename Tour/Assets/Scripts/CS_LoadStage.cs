@@ -167,7 +167,7 @@ public class CS_LoadStage : MonoBehaviour {
 				                      myStationPositionList [t_lastStationNumber],
 				                      Quaternion.identity
 			                      ) as GameObject;
-			t_subway.GetComponent<CS_Subway> ().Init (myStationPositionList, t_lastStationNumber);
+			//t_subway.GetComponent<CS_Subway> ().Init (myStationPositionList, t_lastStationNumber);
 		}
 	}
 
