@@ -333,7 +333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3f6ebac24fc4d4da6d7f605d963d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myScore: 20
 --- !u!114 &114000013981275574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -396,7 +395,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 637774363
+  randomSeed: 571214714
   InitialModule:
     serializedVersion: 2
     enabled: 1

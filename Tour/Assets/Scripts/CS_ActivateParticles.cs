@@ -8,7 +8,7 @@ public class CS_ActivateParticles : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)  {
 
-		if (other.tag == "PreTree" || other.tag == "PreBuilding") {
+		if (other.tag == "PreTrees" || other.tag == "PreBuilding") {
 			contact.Play();
 		}
 	}
