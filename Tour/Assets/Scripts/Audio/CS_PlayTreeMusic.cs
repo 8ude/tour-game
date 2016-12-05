@@ -1,60 +1,62 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Audio;
 
-public class CS_PlayHiMusic : MonoBehaviour {
-	[SerializeField] AudioClip[] hiClips;
+public class CS_PlayTreeMusic : MonoBehaviour {
+	/// <summary>
+	/// Controls Mid-Hi range music, changes based
+	/// on number of trees activated
+	/// </summary>
+
+	[SerializeField] AudioClip[] midHiClips;
 	//int index = 0;
 	public 	AudioSource thisSource;
 	public AudioClip nextClip;
-
 	public CS_GameManager gameMan;
 	public float volumeLevel;
-	public float maxVolume = 0.5f;
+	public float maxVolume = 0.3f;
 	int index = 0;
 
-	public int friends;
-	public int friendsLevelMid, friendsLevelHi, friendsLevelMax;
+	public int trees;
+	public int treesLevelMid, treesLevelHi, treesLevelMax;
 
 	void Start() {
 
-		nextClip = hiClips [index];
-
+		nextClip = midHiClips [index];
 		gameMan = GameObject.Find (CS_Global.NAME_GAMEMANAGER).GetComponent<CS_GameManager> ();
 		thisSource = gameObject.GetComponent<AudioSource> ();
 		thisSource.volume = 0f;
 	}
 	void Update() {
-		int prevFriends = friends;
-		friends = gameMan.numFriends;
+		int prevTrees = trees;
+		trees = gameMan.numTrees;
 
-		if (prevFriends < friends) {
-			IncreaseFriends ();
+		if (prevTrees < trees) {
+			IncreaseTrees ();
 		}
 
 	}
 
-	void IncreaseFriends () {
+	void IncreaseTrees () {
 
-		if (friends == 1) {
+		if (trees == 1) {
 
 			StartCoroutine (FadeVolume ());
 
 
-		} else if (friends == friendsLevelMid) {
+		} else if (trees == treesLevelMid) {
 
 			index = 1;
-			nextClip = hiClips [index];
+			nextClip = midHiClips [index];
 			StartCoroutine(NextClip ());
 
-		} else if (friends == friendsLevelHi) {
+		} else if (trees == treesLevelHi) {
 			index = 2;
-			nextClip = hiClips [index];
+			nextClip = midHiClips [index];
 			StartCoroutine(NextClip ());
 
-		} else if (friends == friendsLevelMax) {
+		} else if (trees == treesLevelMax) {
 			index = 3;
-			nextClip = hiClips [index];
+			nextClip = midHiClips [index];
 			StartCoroutine(NextClip ());
 		}
 
@@ -75,7 +77,5 @@ public class CS_PlayHiMusic : MonoBehaviour {
 			yield return null;
 		}
 	}
-
-
 
 }

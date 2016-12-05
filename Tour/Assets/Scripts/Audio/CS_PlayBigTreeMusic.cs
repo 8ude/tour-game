@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CS_PlayMidMusic : MonoBehaviour {
-	[SerializeField] AudioClip[] midClips;
+public class CS_PlayBigTreeMusic : MonoBehaviour {
+	[SerializeField] AudioClip[] bigTClips;
 	//int index = 0;
 	public 	AudioSource thisSource;
 	public AudioClip nextClip;
@@ -11,43 +11,43 @@ public class CS_PlayMidMusic : MonoBehaviour {
 
 	int index = 0;
 
-	public int stations;
-	public int stationsLevelMid, stationsLevelHi, stationsLevelMax;
+	public int bigTrees;
+	public int bigTLevelMid, bigTLevelHi, bigTLevelMax;
 
 	void Start() {
 
-		nextClip = midClips [index];
+		nextClip = bigTClips [index];
 
 		gameMan = GameObject.Find (CS_Global.NAME_GAMEMANAGER).GetComponent<CS_GameManager> ();
 		thisSource = gameObject.GetComponent<AudioSource> ();
 		thisSource.volume = 0.6f;
 	}
 	void Update() {
-		int prevStations = stations;
-		stations = gameMan.numStations;
+		int prevBigTrees = bigTrees;
+		bigTrees = gameMan.numBigTrees;
 
-		if (prevStations < stations) {
-			IncreaseStations ();
+		if (prevBigTrees < bigTrees) {
+			IncreaseBigTrees ();
 		}
 
 	}
 
-	void IncreaseStations () {
+	void IncreaseBigTrees () {
 
-		if (stations == stationsLevelMid) {
+		if (bigTrees == bigTLevelMid) {
 
 			index = 1;
-			nextClip = midClips [index];
+			nextClip = bigTClips [index];
 			StartCoroutine(NextClip ());
 
-		} else if (stations == stationsLevelHi) {
+		} else if (bigTrees == bigTLevelHi) {
 			index = 2;
-			nextClip = midClips [index];
+			nextClip = bigTClips [index];
 			StartCoroutine(NextClip ());
 
-		} else if (stations == stationsLevelMax) {
+		} else if (bigTrees == bigTLevelMax) {
 			index = 3;
-			nextClip = midClips [index];
+			nextClip = bigTClips [index];
 			StartCoroutine(NextClip ());
 		}
 

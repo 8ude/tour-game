@@ -189,6 +189,21 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000013459013406, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: bigTClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012721135994, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: friendClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011470484974, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: stationClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4000012318908368, guid: e5f6884c253024ec2b969e8731d578d9, type: 2}
       propertyPath: m_LocalPosition.x
       value: -200
@@ -225,6 +240,91 @@ Prefab:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013459013406, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: gameMan
+      value: 
+      objectReference: {fileID: 1742441766}
+    - target: {fileID: 114000013459013406, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: bigTClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: cecfca4b7ea484c8f8bec30fca42a1f9, type: 3}
+    - target: {fileID: 114000013459013406, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: bigTClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6bc0b0d55e5204a5bb9752c428cf5432, type: 3}
+    - target: {fileID: 114000013459013406, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: bigTClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: de073fe95f68547ae87b05a5cdf75283, type: 3}
+    - target: {fileID: 114000013459013406, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: bigTClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 39676ed357a83409cb659fc47f42d287, type: 3}
+    - target: {fileID: 114000012721135994, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: friendClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 460761a8f10fe4f1888b844abd792287, type: 3}
+    - target: {fileID: 114000012721135994, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: friendClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 460761a8f10fe4f1888b844abd792287, type: 3}
+    - target: {fileID: 114000012721135994, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: friendClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: ccb7a70ad3d30458894de92683ddb5d7, type: 3}
+    - target: {fileID: 114000012721135994, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: friendClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a28969de42844cdaa5d6186cb689283, type: 3}
+    - target: {fileID: 114000012721135994, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: friendClips.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: ed66cd4f449c14a7a82c9fa1993e9069, type: 3}
+    - target: {fileID: 114000012721135994, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: friendClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: ccb7a70ad3d30458894de92683ddb5d7, type: 3}
+    - target: {fileID: 114000012721135994, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: friendClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a28969de42844cdaa5d6186cb689283, type: 3}
+    - target: {fileID: 114000012721135994, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: friendClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: ed66cd4f449c14a7a82c9fa1993e9069, type: 3}
+    - target: {fileID: 114000011470484974, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: stationClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f3a9ea23b9c044efab5279944f33840, type: 3}
+    - target: {fileID: 114000011470484974, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: stationClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: b641540a6929b445d94071b425562828, type: 3}
+    - target: {fileID: 114000011470484974, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: stationClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: fc464f7bb27e243a9936b6baad83cc81, type: 3}
+    - target: {fileID: 114000011470484974, guid: e5f6884c253024ec2b969e8731d578d9,
+        type: 2}
+      propertyPath: stationClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 43e46f7e4da5a436d929228f62d5c7d0, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5f6884c253024ec2b969e8731d578d9, type: 2}
   m_IsPrefabParent: 0
@@ -2377,6 +2477,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c78f22e55337542158dc4af6091ad181, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1742441766 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000010304468630, guid: fb9b1778a7937457c8bb7d8d2945f13b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1992767049}
+  m_Script: {fileID: 11500000, guid: 73038fbf5e2854f1cb97ce5fdf27188b, type: 3}
 --- !u!1001 &1751191609
 Prefab:
   m_ObjectHideFlags: 0
