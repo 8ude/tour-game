@@ -55,6 +55,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myObject: {fileID: 1000013188306810, guid: a6501ec54493344bc8314a1c58604ad6, type: 2}
   mySpawns: {fileID: 1000010143859054, guid: b92a6aa2ce8c1467d84a44a7e5bd37ef, type: 2}
+  myFriendObject: {fileID: 1000012695735440, guid: 8ae7992c7944143e0be005d0b4260a6d,
+    type: 2}
   numSpawns: 6
 --- !u!135 &135000014097723444
 SphereCollider:
