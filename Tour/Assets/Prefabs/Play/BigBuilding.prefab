@@ -204,6 +204,7 @@ GameObject:
   - 114: {fileID: 114000014107218074}
   - 95: {fileID: 95000014008716168}
   - 114: {fileID: 114000010512694586}
+  - 114: {fileID: 114000013090020336}
   m_Layer: 0
   m_Name: BigBuilding
   m_TagString: BigBuilding
@@ -928,6 +929,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3f6ebac24fc4d4da6d7f605d963d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000013090020336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013721464984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd99864e2ab24e258468941f37ba3db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySFX:
+  - {fileID: 8300000, guid: f9059f905c0404a2681277e390ab90d0, type: 3}
+  - {fileID: 8300000, guid: 524c1c41ef7a443b7b689dc1435fe159, type: 3}
+  - {fileID: 8300000, guid: ba09e5b3d53ac4e1ca9bce2da40b89ef, type: 3}
+  - {fileID: 8300000, guid: 5fcf606cbe5384e60a5079d1ff92a926, type: 3}
+  - {fileID: 8300000, guid: 6b3441afb204746d0b5ee70e5ba0da38, type: 3}
+  playOnStart: 1
+  playRandomly: 1
+  playOnce: 1
+  playVolume: 0
 --- !u!114 &114000014107218074
 MonoBehaviour:
   m_ObjectHideFlags: 1

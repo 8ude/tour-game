@@ -60,6 +60,7 @@ GameObject:
   - 23: {fileID: 23000013385389164}
   - 95: {fileID: 95000011350210586}
   - 114: {fileID: 114000014089416368}
+  - 114: {fileID: 114000013314043224}
   m_Layer: 0
   m_Name: Building
   m_TagString: Building
@@ -509,6 +510,29 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000013314043224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012393895286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd99864e2ab24e258468941f37ba3db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySFX:
+  - {fileID: 8300000, guid: ede378212eb0d428bb7185265598d599, type: 3}
+  - {fileID: 8300000, guid: dc3ee5c835d7041b28d7b63dcc158cbc, type: 3}
+  - {fileID: 8300000, guid: b519fa4a5af7f478c826241fb72d80a2, type: 3}
+  - {fileID: 8300000, guid: b04262faaf75540f0828f6a87663772f, type: 3}
+  - {fileID: 8300000, guid: 632d858b22c0047c58b86f1015f0abec, type: 3}
+  - {fileID: 8300000, guid: e39e998c534934cc398d02abc910f8e9, type: 3}
+  - {fileID: 8300000, guid: be49d6df34c914bdcafb131c61e0648f, type: 3}
+  playOnStart: 1
+  playRandomly: 1
+  playOnce: 1
+  playVolume: 0.3
 --- !u!114 &114000014089416368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -520,4 +544,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3f6ebac24fc4d4da6d7f605d963d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myScore: 2

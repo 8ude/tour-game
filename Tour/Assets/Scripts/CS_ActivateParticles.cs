@@ -5,6 +5,7 @@ public class CS_ActivateParticles : MonoBehaviour {
 
 	public ParticleSystem contact;
 	public ParticleSystem splash;
+	public AudioSource thisSource;
 
 	void Awake(){
 		splash.Stop();
@@ -18,6 +19,7 @@ public class CS_ActivateParticles : MonoBehaviour {
 		}
 
 		if (other.tag == "Water") {
+			thisSource.Play ();
 			splash.Play();
 		}
 			

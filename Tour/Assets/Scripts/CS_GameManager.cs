@@ -1,11 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class CS_GameManager : MonoBehaviour {
 
 	public GameObject city;
+
+	public Image blackScreen;
+	public Image whiteScreen;
+
+
 	public List<GameObject> preObjects;
+	[SerializeField] GameObject EndingStation;
+	[SerializeField] GameObject EndingTrain;
+
+	[SerializeField] GameObject NatureEnding;
+
 
 	public int numTrees, numBigTrees, numFriends, numBuildings, numBigBuildings, numStations;
 
@@ -14,12 +27,14 @@ public class CS_GameManager : MonoBehaviour {
 	public int MaxScore = 100;
 	public float ScoreTotal = 0;
 	bool _atMaxScore;
+	bool _triggeredEnding;
 
-	int natureTotal = 0;
-	int cityTotal = 0;
+	public int natureTotal = 0;
+	public int cityTotal = 0;
 
 	public float minCameraSize = 10f;
 	public float maxCameraSize = 100f;
+	public float finalCameraSize;
 
 	// 0.0 = nature
 	// 1.0 = city 
@@ -29,6 +44,9 @@ public class CS_GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		blackScreen.canvasRenderer.SetAlpha (0.0f);
+		whiteScreen.canvasRenderer.SetAlpha (0.0f);
+
 		numTrees = 0;
 		numBigTrees = 0;
 		numFriends = 0;
@@ -37,6 +55,7 @@ public class CS_GameManager : MonoBehaviour {
 		numStations = 0;
 		ScoreTotal = 0;
 		_atMaxScore = false;
+		_triggeredEnding = false;
 
 		preObjects = new List<GameObject>();
 	
@@ -84,6 +103,14 @@ public class CS_GameManager : MonoBehaviour {
 				Destroy (preObject);
 
 			}
+
+			if (cityScale > 0.5f && !_triggeredEnding) {
+				CreateEndingTrain ();
+				_triggeredEnding = true;
+			} else {
+				CreateNatureEnding ();
+				_triggeredEnding = true;
+			}
 		}
 
 
@@ -127,9 +154,44 @@ public class CS_GameManager : MonoBehaviour {
 
 	public void IncreaseCameraSize() {
 
-		float t_size = (float)(ScoreTotal / MaxScore) * maxCameraSize + minCameraSize;
+		float t_size = (float)minCameraSize + (ScoreTotal * (maxCameraSize - minCameraSize) / MaxScore);
+
+
+		//b1 + (s-a1)*(b2-b1)/(a2-a1)
+
+		if (ScoreTotal >= MaxScore) {
+			t_size = maxCameraSize;
+		}
 
 		Camera.main.GetComponent<CS_Camera> ().SetSize (t_size);
 
 	}
+
+	void CreateEndingTrain() {
+
+		EndingStation.SetActive (true);
+		EndingTrain.SetActive (true);
+
+	}
+
+	void CreateNatureEnding() {
+		NatureEnding.SetActive (true);
+	}
+
+	public void FadeOut() {
+		blackScreen.CrossFadeAlpha (1.0f, 10.0f, true);
+
+		Invoke ("ReloadLevel", 10.0f);
+	}
+
+	public void FadeToWhite() {
+		whiteScreen.CrossFadeAlpha (1.0f, 10.0f, true);
+		Invoke ("ReloadLevel", 10.0f);
+	}
+	
+	void ReloadLevel() {
+		Scene scene = SceneManager.GetActiveScene ();
+		SceneManager.LoadScene (scene.name);
+	}
+	
 }

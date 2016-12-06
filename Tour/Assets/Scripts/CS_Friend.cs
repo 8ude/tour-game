@@ -6,6 +6,7 @@ public class CS_Friend : MonoBehaviour {
 	[SerializeField] float mySpeed;
 	[SerializeField] AudioClip[] myClips;
 
+	private AudioSource mySource;
 	private Vector3 myDirection;
 	private GameObject myTarget;
 	private Vector3 myTargetPositionDelta;
@@ -14,6 +15,8 @@ public class CS_Friend : MonoBehaviour {
 
 
 	void Start () {
+
+		mySource = gameObject.GetComponent<AudioSource> ();
 
 		PickAudioClip ();
 
@@ -46,6 +49,9 @@ public class CS_Friend : MonoBehaviour {
 	void PickAudioClip() {
 		int thisClip = Random.Range (0, myClips.Length-1);
 		gameObject.GetComponent<AudioSource> ().clip = myClips [thisClip];
+		mySource.Play ();
+
+
 
 	}
 }
