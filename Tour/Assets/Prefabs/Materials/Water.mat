@@ -18,9 +18,9 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 2800000, guid: 4b8d081e9d114c7f1100f5ab44295342, type: 3}
-        m_Scale: {x: 5, y: 5}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 95a108f2a43024dd19d050af28c17c56, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 2}
     - first:
         name: _DetailAlbedoMap
       second:
@@ -72,7 +72,7 @@ Material:
     m_Floats:
     - first:
         name: _BumpAmt
-      second: 55
+      second: 45
     - first:
         name: _BumpScale
       second: 1

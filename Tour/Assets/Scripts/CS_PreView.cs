@@ -28,7 +28,7 @@ public class CS_PreView : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 
 		if (other.tag == CS_Global.TAG_PLAYER || other.tag == CS_Global.TAG_FRIEND) {
-			if (myObject.name == "TreePrefab") {
+			if (myObject.tag == "Tree") {
 				Instantiate (myObject, this.transform.position, Quaternion.Euler (45, -90, 90));
 				Destroy (this.gameObject);
 			} else {

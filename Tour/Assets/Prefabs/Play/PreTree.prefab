@@ -20,8 +20,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013429279464}
   - 212: {fileID: 212000014216508404}
-  - 114: {fileID: 114000011501485026}
   - 135: {fileID: 135000012998610976}
+  - 114: {fileID: 114000010658722836}
+  - 114: {fileID: 114000011346601508}
   m_Layer: 10
   m_Name: PreTree
   m_TagString: PreTrees
@@ -36,13 +37,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010143859054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.3, y: 37.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000011501485026
+--- !u!114 &114000010658722836
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -50,11 +51,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010143859054}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb6ea3e9435b4652b9e445d32397af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myObjects:
+  - {fileID: 1000013543030664, guid: edb5801f70d7c48d2b31fe54a0ee8379, type: 2}
+  - {fileID: 1000012166024000, guid: df44c850815394820a86fcf2cf185157, type: 2}
+  - {fileID: 1000011716044404, guid: a6917e3807d6245e0b3f9c6ac34bb429, type: 2}
+--- !u!114 &114000011346601508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010143859054}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e07a978f6dd4301a2e7710b7845484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myObject: {fileID: 1000012773575488, guid: 39361562190ea47a6bfac2c675e05691, type: 2}
-  selfMesh: {fileID: 1000010143859054}
+  myObject: {fileID: 1000013543030664, guid: edb5801f70d7c48d2b31fe54a0ee8379, type: 2}
+  selfMesh: {fileID: 0}
 --- !u!135 &135000012998610976
 SphereCollider:
   m_ObjectHideFlags: 1

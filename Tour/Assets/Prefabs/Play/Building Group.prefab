@@ -24,7 +24,7 @@ GameObject:
   - 23: {fileID: 23000014057777688}
   m_Layer: 0
   m_Name: PreBigBuilding
-  m_TagString: Untagged
+  m_TagString: PreBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 9e06a0d0115e24225a476b2e6f0988f2, type: 2}
+  - {fileID: 2100000, guid: d2620604f0ee940408f2308b4ef5dc4d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}

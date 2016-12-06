@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013717786282}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -34.4, y: 75.7, z: 0}
+  m_LocalPosition: {x: -21.9, y: -114.6, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -53,7 +53,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5edc71b4001444ae993faf87f9f9ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myObject: {fileID: 1000013188306810, guid: a6501ec54493344bc8314a1c58604ad6, type: 2}
+  myObjects:
+  - {fileID: 1000010101057650, guid: b151889b14a654c0abb8ca1b4019ea42, type: 2}
+  - {fileID: 1000013897659850, guid: e9771e0a1f1154980a1d5b7564258c4c, type: 2}
+  - {fileID: 1000011002220072, guid: e00753a1948484c7d8bdb29c3a41dbda, type: 2}
   mySpawns: {fileID: 1000010143859054, guid: b92a6aa2ce8c1467d84a44a7e5bd37ef, type: 2}
   myFriendObject: {fileID: 1000012695735440, guid: 8ae7992c7944143e0be005d0b4260a6d,
     type: 2}
