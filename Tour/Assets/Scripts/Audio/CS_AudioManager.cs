@@ -2,6 +2,7 @@
 //http://www.blog.silentkraken.com/2010/04/06/audiomanager/
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class CS_AudioManager : MonoBehaviour {
 	
@@ -11,10 +12,9 @@ public class CS_AudioManager : MonoBehaviour {
 
 	[SerializeField] AudioSource myAudioSource;
 
-	[SerializeField] AudioSource BassSource;
-	[SerializeField] AudioSource LowMidSource;
-	[SerializeField] AudioSource HiMidSource;
-	[SerializeField] AudioSource HiSource;
+	[SerializeField] AudioMixerGroup SFXGroup;
+
+
 
 	//========================================================================
 	public static CS_AudioManager Instance {
@@ -47,6 +47,7 @@ public class CS_AudioManager : MonoBehaviour {
 		t_SFX.name = "SFX_" + g_SFX.name;
 		t_SFX.GetComponent<AudioSource> ().clip = g_SFX;
 		t_SFX.GetComponent<AudioSource> ().volume = g_Volume;
+		t_SFX.GetComponent<AudioSource> ().outputAudioMixerGroup = SFXGroup;
 		t_SFX.GetComponent<AudioSource> ().Play ();
 		DestroyObject(t_SFX, g_SFX.length);
 	}

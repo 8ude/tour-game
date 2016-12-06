@@ -1,62 +1,59 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CS_PlayMidHiMusic : MonoBehaviour {
-	/// <summary>
-	/// Controls Mid-Hi range music, changes based
-	/// on number of trees activated
-	/// </summary>
-
-	[SerializeField] AudioClip[] midHiClips;
+public class CS_PlayStationMusic : MonoBehaviour {
+	[SerializeField] AudioClip[] stationClips;
 	//int index = 0;
 	public 	AudioSource thisSource;
 	public AudioClip nextClip;
+
 	public CS_GameManager gameMan;
 	public float volumeLevel;
-	public float maxVolume = 0.3f;
+	public float maxVolume = 0.7f;
 	int index = 0;
 
-	public int trees;
-	public int treesLevelMid, treesLevelHi, treesLevelMax;
+	public int stations;
+	public int stationLevelMid, stationLevelHi, stationLevelMax;
 
 	void Start() {
 
-		nextClip = midHiClips [index];
+		nextClip = stationClips [index];
+
 		gameMan = GameObject.Find (CS_Global.NAME_GAMEMANAGER).GetComponent<CS_GameManager> ();
 		thisSource = gameObject.GetComponent<AudioSource> ();
 		thisSource.volume = 0f;
 	}
 	void Update() {
-		int prevTrees = trees;
-		trees = gameMan.numTrees;
+		int prevStations = stations;
+		stations = gameMan.numStations;
 
-		if (prevTrees < trees) {
-			IncreaseTrees ();
+		if (prevStations < stations) {
+			IncreaseStations ();
 		}
 
 	}
 
-	void IncreaseTrees () {
+	void IncreaseStations () {
 
-		if (trees == 1) {
+		if (stations == 1) {
 
 			StartCoroutine (FadeVolume ());
 
 
-		} else if (trees == treesLevelMid) {
+		} else if (stations == stationLevelMid) {
 
 			index = 1;
-			nextClip = midHiClips [index];
+			nextClip = stationClips [index];
 			StartCoroutine(NextClip ());
 
-		} else if (trees == treesLevelHi) {
+		} else if (stations == stationLevelHi) {
 			index = 2;
-			nextClip = midHiClips [index];
+			nextClip = stationClips [index];
 			StartCoroutine(NextClip ());
 
-		} else if (trees == treesLevelMax) {
+		} else if (stations == stationLevelMax) {
 			index = 3;
-			nextClip = midHiClips [index];
+			nextClip = stationClips [index];
 			StartCoroutine(NextClip ());
 		}
 

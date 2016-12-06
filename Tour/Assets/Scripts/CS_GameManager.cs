@@ -62,7 +62,7 @@ public class CS_GameManager : MonoBehaviour {
 
 		GameObject[] preTrees;
 
-		preTrees = GameObject.FindGameObjectsWithTag ("PreTree");
+		preTrees = GameObject.FindGameObjectsWithTag ("PreTrees");
 
 		if (preBuildings.Length == 0 && !_atMaxScore) {
 			city.SendMessage ("GeneratePreBuilding");

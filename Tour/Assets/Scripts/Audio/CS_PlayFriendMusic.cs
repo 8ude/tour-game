@@ -1,59 +1,60 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
-public class CS_PlayLowMusic : MonoBehaviour {
-	[SerializeField] AudioClip[] lowClips;
+public class CS_PlayFriendMusic : MonoBehaviour {
+	[SerializeField] AudioClip[] friendClips;
 	//int index = 0;
 	public 	AudioSource thisSource;
 	public AudioClip nextClip;
 
 	public CS_GameManager gameMan;
 	public float volumeLevel;
-	public float maxVolume = 0.7f;
+	public float maxVolume = 0.5f;
 	int index = 0;
 
-	public int bigTrees;
-	public int bigTLevelMid, bigTLevelHi, bigTLevelMax;
+	public int friends;
+	public int friendsLevelMid, friendsLevelHi, friendsLevelMax;
 
 	void Start() {
 
-		nextClip = lowClips [index];
+		nextClip = friendClips [index];
 
 		gameMan = GameObject.Find (CS_Global.NAME_GAMEMANAGER).GetComponent<CS_GameManager> ();
 		thisSource = gameObject.GetComponent<AudioSource> ();
 		thisSource.volume = 0f;
 	}
 	void Update() {
-		int prevBigTrees = bigTrees;
-		bigTrees = gameMan.BigTreeScore;
+		int prevFriends = friends;
+		friends = gameMan.numFriends;
 
-		if (prevBigTrees < bigTrees) {
-			IncreaseBigTrees ();
+		if (prevFriends < friends) {
+			IncreaseFriends ();
 		}
 
 	}
 
-	void IncreaseBigTrees () {
+	void IncreaseFriends () {
 
-		if (bigTrees == 1) {
+		if (friends == 1) {
 
 			StartCoroutine (FadeVolume ());
 
 
-		} else if (bigTrees == bigTLevelMid) {
+		} else if (friends == friendsLevelMid) {
 
 			index = 1;
-			nextClip = lowClips [index];
+			nextClip = friendClips [index];
 			StartCoroutine(NextClip ());
 
-		} else if (bigTrees == bigTLevelHi) {
+		} else if (friends == friendsLevelHi) {
 			index = 2;
-			nextClip = lowClips [index];
+			nextClip = friendClips [index];
 			StartCoroutine(NextClip ());
 
-		} else if (bigTrees == bigTLevelMax) {
+		} else if (friends == friendsLevelMax) {
 			index = 3;
-			nextClip = lowClips [index];
+			nextClip = friendClips [index];
 			StartCoroutine(NextClip ());
 		}
 
@@ -74,5 +75,7 @@ public class CS_PlayLowMusic : MonoBehaviour {
 			yield return null;
 		}
 	}
+
+
 
 }

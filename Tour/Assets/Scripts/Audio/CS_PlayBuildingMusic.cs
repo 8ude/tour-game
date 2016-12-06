@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.Audio;
 
 public class CS_PlayBuildingMusic : MonoBehaviour {
-	[SerializeField] AudioClip[] hiClips;
+	[SerializeField] AudioClip[] buildingClips;
 	//int index = 0;
 	public 	AudioSource thisSource;
 	public AudioClip nextClip;
@@ -13,49 +13,49 @@ public class CS_PlayBuildingMusic : MonoBehaviour {
 	public float maxVolume = 0.5f;
 	int index = 0;
 
-	public int friends;
-	public int friendsLevelMid, friendsLevelHi, friendsLevelMax;
+	public int buildings;
+	public int buildingLevelMid, buildingLevelHi, buildingLevelMax;
 
 	void Start() {
 
-		nextClip = hiClips [index];
+		nextClip = buildingClips [index];
 
 		gameMan = GameObject.Find (CS_Global.NAME_GAMEMANAGER).GetComponent<CS_GameManager> ();
 		thisSource = gameObject.GetComponent<AudioSource> ();
 		thisSource.volume = 0f;
 	}
 	void Update() {
-		int prevFriends = friends;
-		friends = 1;
+		int prevBuildings = buildings;
+		buildings = gameMan.numBuildings;
 		//friends = gameMan.numFriends;
 
-		if (prevFriends < friends) {
-			IncreaseFriends ();
+		if (prevBuildings < buildings) {
+			IncreaseBuildings();
 		}
 
 	}
 
-	void IncreaseFriends () {
+	void IncreaseBuildings () {
 
-		if (friends == 1) {
+		if (buildings == 1) {
 
 			StartCoroutine (FadeVolume ());
 
 
-		} else if (friends == friendsLevelMid) {
+		} else if (buildings == buildingLevelMid) {
 
 			index = 1;
-			nextClip = hiClips [index];
+			nextClip = buildingClips [index];
 			StartCoroutine(NextClip ());
 
-		} else if (friends == friendsLevelHi) {
+		} else if (buildings == buildingLevelHi) {
 			index = 2;
-			nextClip = hiClips [index];
+			nextClip = buildingClips [index];
 			StartCoroutine(NextClip ());
 
-		} else if (friends == friendsLevelMax) {
+		} else if (buildings == buildingLevelMax) {
 			index = 3;
-			nextClip = hiClips [index];
+			nextClip = buildingClips [index];
 			StartCoroutine(NextClip ());
 		}
 

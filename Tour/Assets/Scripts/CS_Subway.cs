@@ -26,7 +26,7 @@ public class CS_Subway : MonoBehaviour {
 
 		myStationPositionList = new List<Vector3> ();
 		for (int i = 0; i < myStations.Length; i++) {
-//			Debug.Log (myStations [i].gameObject.transform.position);
+			
 			myStationPositionList.Add (myStations [i].gameObject.transform.position);
 		}
 		Init (myStationPositionList);
@@ -75,7 +75,7 @@ public class CS_Subway : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter (Collider other) {
+	void OnTriggerStay (Collider other) {
 		if ((other.tag == CS_Global.TAG_PLAYER || other.tag == CS_Global.TAG_FRIEND || other.tag == CS_Global.TAG_WORKER) && _atStation) {
 //			Debug.Log ("EnterSubway:" + other.tag);
 			if (myPassengerList.Contains (other.gameObject) == false)

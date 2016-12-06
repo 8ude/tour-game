@@ -173,7 +173,8 @@ AudioSource:
   m_GameObject: {fileID: 1000013718379214}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243000011670153660, guid: 06787db0913204748a1edde94cff23cd,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 55e8b05a4969d414f8beee9a312cdf35, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -245,7 +246,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010048685636}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ccb7a70ad3d30458894de92683ddb5d7, type: 3}
@@ -469,7 +470,8 @@ AudioSource:
   m_GameObject: {fileID: 1000011137194800}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243000010527468674, guid: 06787db0913204748a1edde94cff23cd,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: cecfca4b7ea484c8f8bec30fca42a1f9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -546,20 +548,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b1dab321f2e4bb3a5819d5d774cb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lowClips:
+  stationClips:
+  - {fileID: 8300000, guid: 4f3a9ea23b9c044efab5279944f33840, type: 3}
   - {fileID: 8300000, guid: b641540a6929b445d94071b425562828, type: 3}
   - {fileID: 8300000, guid: fc464f7bb27e243a9936b6baad83cc81, type: 3}
-  - {fileID: 8300000, guid: 4f3a9ea23b9c044efab5279944f33840, type: 3}
   - {fileID: 8300000, guid: 43e46f7e4da5a436d929228f62d5c7d0, type: 3}
   thisSource: {fileID: 0}
   nextClip: {fileID: 0}
   gameMan: {fileID: 0}
   volumeLevel: 0
   maxVolume: 0.8
-  bigTrees: 0
-  bigTLevelMid: 0
-  bigTLevelHi: 0
-  bigTLevelMax: 0
+  stations: 0
+  stationLevelMid: 0
+  stationLevelHi: 0
+  stationLevelMax: 0
 --- !u!114 &114000012178054336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -591,16 +593,16 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010048685636}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa319a3e727704cf797f0f4c717ade62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hiClips:
-  - {fileID: 8300000, guid: ccb7a70ad3d30458894de92683ddb5d7, type: 3}
-  - {fileID: 8300000, guid: ed66cd4f449c14a7a82c9fa1993e9069, type: 3}
+  friendClips:
   - {fileID: 8300000, guid: 460761a8f10fe4f1888b844abd792287, type: 3}
+  - {fileID: 8300000, guid: ccb7a70ad3d30458894de92683ddb5d7, type: 3}
   - {fileID: 8300000, guid: 9a28969de42844cdaa5d6186cb689283, type: 3}
+  - {fileID: 8300000, guid: ed66cd4f449c14a7a82c9fa1993e9069, type: 3}
   thisSource: {fileID: 82000012472670160}
   nextClip: {fileID: 0}
   gameMan: {fileID: 0}
@@ -621,7 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b8b8ad893df4d87841161963165a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  midClips:
+  bigTClips:
   - {fileID: 8300000, guid: cecfca4b7ea484c8f8bec30fca42a1f9, type: 3}
   - {fileID: 8300000, guid: 6bc0b0d55e5204a5bb9752c428cf5432, type: 3}
   - {fileID: 8300000, guid: de073fe95f68547ae87b05a5cdf75283, type: 3}
@@ -629,10 +631,10 @@ MonoBehaviour:
   thisSource: {fileID: 0}
   nextClip: {fileID: 0}
   gameMan: {fileID: 0}
-  stations: 0
-  stationsLevelMid: 2
-  stationsLevelHi: 3
-  stationsLevelMax: 4
+  bigTrees: 0
+  bigTLevelMid: 0
+  bigTLevelHi: 0
+  bigTLevelMax: 0
 --- !u!114 &114000013666206688
 MonoBehaviour:
   m_ObjectHideFlags: 1
