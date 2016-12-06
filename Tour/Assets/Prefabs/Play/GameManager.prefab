@@ -52,9 +52,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   city: {fileID: 0}
+  blackScreen: {fileID: 0}
+  whiteScreen: {fileID: 0}
   preObjects: []
   EndingStation: {fileID: 0}
   EndingTrain: {fileID: 0}
+  NatureEnding: {fileID: 0}
   numTrees: 0
   numBigTrees: 0
   numFriends: 0

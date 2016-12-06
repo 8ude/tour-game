@@ -44,6 +44,7 @@ public class CS_GameManager : MonoBehaviour {
 	void Start () {
 
 		blackScreen.canvasRenderer.SetAlpha (0.0f);
+		whiteScreen.canvasRenderer.SetAlpha (0.0f);
 
 		numTrees = 0;
 		numBigTrees = 0;
