@@ -59,14 +59,14 @@ MonoBehaviour:
   numBuildings: 0
   numBigBuildings: 0
   numStations: 0
-  FriendScore: 2
-  TreeScore: 2
-  BigTreeScore: 5
-  StationScore: 5
+  FriendScore: 0
+  TreeScore: 1
+  BigTreeScore: 4
+  StationScore: 3
   BuildingScore: 2
   BigBuildingScore: 5
-  MaxScore: 100
+  MaxScore: 200
   ScoreTotal: 0
   minCameraSize: 10
-  maxCameraSize: 100
+  maxCameraSize: 15
   cityScale: 0.5

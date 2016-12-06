@@ -103,4 +103,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myObject: {fileID: 1000012393895286, guid: 2a8c12bc4203d4d57bc7c8e23c516aea, type: 2}
-  selfMesh: {fileID: 0}
+  selfMesh: {fileID: 1000012307653392}

@@ -14,12 +14,13 @@ public class CS_ShadowDelay : MonoBehaviour {
 	}
 
 	void Start () {
+		TweenShadow ();
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-			TweenShadow ();
+
 			proj.farClipPlane = myFloat;
 	}
 
