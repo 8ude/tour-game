@@ -231,12 +231,6 @@ Prefab:
       propertyPath: gameMan
       value: 
       objectReference: {fileID: 1742441766}
-    - target: {fileID: 82000014238662984, guid: e5f6884c253024ec2b969e8731d578d9,
-        type: 2}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 243000010527468674, guid: 06787db0913204748a1edde94cff23cd,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5f6884c253024ec2b969e8731d578d9, type: 2}
   m_IsPrefabParent: 0

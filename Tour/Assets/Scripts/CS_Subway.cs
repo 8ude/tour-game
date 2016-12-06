@@ -75,7 +75,7 @@ public class CS_Subway : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter (Collider other) {
+	void OnTriggerStay (Collider other) {
 		if ((other.tag == CS_Global.TAG_PLAYER || other.tag == CS_Global.TAG_FRIEND || other.tag == CS_Global.TAG_WORKER) && _atStation) {
 			Debug.Log ("EnterSubway:" + other.tag);
 			if (myPassengerList.Contains (other.gameObject) == false)
