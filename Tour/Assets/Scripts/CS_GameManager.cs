@@ -34,6 +34,7 @@ public class CS_GameManager : MonoBehaviour {
 
 	public float minCameraSize = 10f;
 	public float maxCameraSize = 100f;
+	public float finalCameraSize;
 
 	// 0.0 = nature
 	// 1.0 = city 
@@ -153,7 +154,14 @@ public class CS_GameManager : MonoBehaviour {
 
 	public void IncreaseCameraSize() {
 
-		float t_size = (float)(ScoreTotal / MaxScore) * maxCameraSize + minCameraSize;
+		float t_size = (float)minCameraSize + (ScoreTotal * (maxCameraSize - minCameraSize) / MaxScore);
+
+
+		//b1 + (s-a1)*(b2-b1)/(a2-a1)
+
+		if (ScoreTotal >= MaxScore) {
+			t_size = maxCameraSize;
+		}
 
 		Camera.main.GetComponent<CS_Camera> ().SetSize (t_size);
 
@@ -171,14 +179,14 @@ public class CS_GameManager : MonoBehaviour {
 	}
 
 	public void FadeOut() {
-		blackScreen.CrossFadeAlpha (1.0f, 3.0f, true);
+		blackScreen.CrossFadeAlpha (1.0f, 10.0f, true);
 
-		Invoke ("ReloadLevel", 3.0f);
+		Invoke ("ReloadLevel", 10.0f);
 	}
 
 	public void FadeToWhite() {
-		whiteScreen.CrossFadeAlpha (1.0f, 3.0f, true);
-		Invoke ("ReloadLevel", 3.0f);
+		whiteScreen.CrossFadeAlpha (1.0f, 10.0f, true);
+		Invoke ("ReloadLevel", 10.0f);
 	}
 	
 	void ReloadLevel() {

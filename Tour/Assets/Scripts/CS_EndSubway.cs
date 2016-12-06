@@ -69,7 +69,7 @@ public class CS_EndSubway : MonoBehaviour {
 		}
 			
 
-		Debug.Log(myPassengerList.Count);
+	
 		if (myPassengerList.Count >= 1) {
 			//move myself ---- ending
 

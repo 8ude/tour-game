@@ -19,13 +19,14 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010976393184}
+  - 114: {fileID: 114000011599640580}
   m_Layer: 0
   m_Name: NatureFinal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000010304422820
 GameObject:
   m_ObjectHideFlags: 1
@@ -224,6 +225,7 @@ GameObject:
   - 23: {fileID: 23000012749075376}
   - 95: {fileID: 95000011275625968}
   - 65: {fileID: 65000012948058328}
+  - 114: {fileID: 114000011304360608}
   m_Layer: 0
   m_Name: Base (1)
   m_TagString: Untagged
@@ -2065,6 +2067,37 @@ Light:
   m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114000011304360608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012161460146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3802fd3eded1d493f8bc16aa3dd24147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  friendObject: {fileID: 1000012695735440, guid: 8ae7992c7944143e0be005d0b4260a6d,
+    type: 2}
+  spawnFriendTimer: 0.25
+--- !u!114 &114000011599640580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010128646896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd99864e2ab24e258468941f37ba3db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySFX:
+  - {fileID: 8300000, guid: 83d70e951621b49df970bde7dc19e48e, type: 3}
+  playOnStart: 1
+  playRandomly: 0
+  playOnce: 0
+  playVolume: 0
 --- !u!119 &119000012271239570
 Projector:
   m_ObjectHideFlags: 1

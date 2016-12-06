@@ -41,6 +41,7 @@ GameObject:
   - 135: {fileID: 135000012402558972}
   - 54: {fileID: 54000011887758502}
   - 114: {fileID: 114000013664096774}
+  - 114: {fileID: 114000011254446906}
   m_Layer: 10
   m_Name: EndingSubway
   m_TagString: Subway
@@ -174,6 +175,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000011254446906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011481027182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd99864e2ab24e258468941f37ba3db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySFX:
+  - {fileID: 8300000, guid: fe4d30c2ab15c4ed49f36ccd785d88e8, type: 3}
+  playOnStart: 1
+  playRandomly: 0
+  playOnce: 1
+  playVolume: 0
 --- !u!114 &114000013664096774
 MonoBehaviour:
   m_ObjectHideFlags: 1
