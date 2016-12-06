@@ -13,7 +13,6 @@ public class CS_BigPreTree : MonoBehaviour {
 
 		if (other.tag == CS_Global.TAG_PLAYER || other.tag == CS_Global.TAG_FRIEND) {
 			Instantiate (myObjects[Random.Range (0, myObjects.Length)], this.transform.position, Quaternion.Euler (45, -90, 90));
-			Instantiate (myObject, this.transform.position, Quaternion.identity);
 			Instantiate (myFriendObject, this.transform.position, Quaternion.identity);
 			for (int i = 0; i < numSpawns; i ++) {
 				
