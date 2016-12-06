@@ -313,11 +313,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySFX:
-  - {fileID: 8300000, guid: 2a7481d10010c4c05abf11164b83e960, type: 3}
-  - {fileID: 8300000, guid: 9f2ecffc9d07c44efbb9fe053ac5fa81, type: 3}
-  - {fileID: 8300000, guid: 9973c05f3245b494f8950b676c4a8e3b, type: 3}
-  - {fileID: 8300000, guid: 6b57350ca930a4ac8915f45c35b718da, type: 3}
-  - {fileID: 8300000, guid: a2b24611d7bf94a5d9e5d3f55d8b2fa6, type: 3}
+  - {fileID: 8300000, guid: 5ed81591aaa714a02976a489b02d6957, type: 3}
+  - {fileID: 8300000, guid: 28339543eb9594c4f8f2fa6fee6fa379, type: 3}
+  - {fileID: 8300000, guid: 8df49d16b5c9d4686ac432569c7e2058, type: 3}
+  - {fileID: 8300000, guid: 24fb23669b72246cbb0c14d54978586b, type: 3}
+  - {fileID: 8300000, guid: 8f8ed666f70444946b3ecd723c5ef14c, type: 3}
+  - {fileID: 8300000, guid: 20973eab088454fc196e7a33c67aef41, type: 3}
   playOnStart: 1
   playRandomly: 1
   playOnce: 1

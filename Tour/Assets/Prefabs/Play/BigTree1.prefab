@@ -37,6 +37,7 @@ GameObject:
   - 4: {fileID: 4000013730653790}
   - 95: {fileID: 95000013428204418}
   - 114: {fileID: 114000010655547636}
+  - 114: {fileID: 114000013941005652}
   m_Layer: 0
   m_Name: BigTree1
   m_TagString: BigTree
@@ -699,6 +700,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3f6ebac24fc4d4da6d7f605d963d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000013941005652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010101057650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd99864e2ab24e258468941f37ba3db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySFX:
+  - {fileID: 8300000, guid: 8cc089512f5674f949df9d6e5a3c38a3, type: 3}
+  - {fileID: 8300000, guid: 031c2214abbca4da8ac7a807b3ca3d90, type: 3}
+  - {fileID: 8300000, guid: 7044ee77d963e455789c24f10de815c4, type: 3}
+  - {fileID: 8300000, guid: 65e936083587b4683b505ad14bf01ddc, type: 3}
+  - {fileID: 8300000, guid: 7cbede3999f1d4393af74b3978d076c5, type: 3}
+  - {fileID: 8300000, guid: 260a273b668ad44adbd6279feff528c1, type: 3}
+  playOnStart: 1
+  playRandomly: 1
+  playOnce: 1
+  playVolume: 0
 --- !u!119 &119000010868561344
 Projector:
   m_ObjectHideFlags: 1

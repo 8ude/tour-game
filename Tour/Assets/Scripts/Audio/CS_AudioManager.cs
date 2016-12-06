@@ -38,6 +38,7 @@ public class CS_AudioManager : MonoBehaviour {
 		GameObject t_SFX = Instantiate (myPrefabSFX) as GameObject;
 		t_SFX.name = "SFX_" + g_SFX.name;
 		t_SFX.GetComponent<AudioSource> ().clip = g_SFX;
+		t_SFX.GetComponent<AudioSource> ().outputAudioMixerGroup = SFXGroup;
 		t_SFX.GetComponent<AudioSource> ().Play ();
 		DestroyObject(t_SFX, g_SFX.length);
 	}

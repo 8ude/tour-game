@@ -51,11 +51,7 @@ public class CS_PlayStationMusic : MonoBehaviour {
 			nextClip = stationClips [index];
 			StartCoroutine(NextClip ());
 
-		} else if (stations == stationLevelMax) {
-			index = 3;
-			nextClip = stationClips [index];
-			StartCoroutine(NextClip ());
-		}
+		} 
 
 	}
 

@@ -527,6 +527,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b519fa4a5af7f478c826241fb72d80a2, type: 3}
   - {fileID: 8300000, guid: b04262faaf75540f0828f6a87663772f, type: 3}
   - {fileID: 8300000, guid: 632d858b22c0047c58b86f1015f0abec, type: 3}
+  - {fileID: 8300000, guid: e39e998c534934cc398d02abc910f8e9, type: 3}
+  - {fileID: 8300000, guid: be49d6df34c914bdcafb131c61e0648f, type: 3}
   playOnStart: 1
   playRandomly: 1
   playOnce: 1

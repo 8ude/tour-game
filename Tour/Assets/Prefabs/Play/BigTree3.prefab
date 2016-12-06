@@ -106,6 +106,7 @@ GameObject:
   - 4: {fileID: 4000013101798810}
   - 95: {fileID: 95000011378842732}
   - 114: {fileID: 114000012968243066}
+  - 114: {fileID: 114000010352710884}
   m_Layer: 0
   m_Name: BigTree3
   m_TagString: BigTree
@@ -621,6 +622,28 @@ Light:
   m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114000010352710884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011002220072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd99864e2ab24e258468941f37ba3db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySFX:
+  - {fileID: 8300000, guid: 8cc089512f5674f949df9d6e5a3c38a3, type: 3}
+  - {fileID: 8300000, guid: 031c2214abbca4da8ac7a807b3ca3d90, type: 3}
+  - {fileID: 8300000, guid: 7044ee77d963e455789c24f10de815c4, type: 3}
+  - {fileID: 8300000, guid: 65e936083587b4683b505ad14bf01ddc, type: 3}
+  - {fileID: 8300000, guid: 7cbede3999f1d4393af74b3978d076c5, type: 3}
+  - {fileID: 8300000, guid: 260a273b668ad44adbd6279feff528c1, type: 3}
+  playOnStart: 1
+  playRandomly: 1
+  playOnce: 1
+  playVolume: 0
 --- !u!114 &114000012968243066
 MonoBehaviour:
   m_ObjectHideFlags: 1
