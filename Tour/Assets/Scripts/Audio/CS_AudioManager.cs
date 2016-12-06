@@ -30,7 +30,7 @@ public class CS_AudioManager : MonoBehaviour {
 			instance = this;
 		}
 
-		DontDestroyOnLoad(this.gameObject);
+		//DontDestroyOnLoad(this.gameObject);
 	}
 	//========================================================================
 

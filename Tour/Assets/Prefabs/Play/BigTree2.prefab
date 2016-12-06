@@ -171,9 +171,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010038898898}
   - 95: {fileID: 95000013772678344}
+  - 114: {fileID: 114000010949484828}
   m_Layer: 0
   m_Name: BigTree2
-  m_TagString: Untagged
+  m_TagString: BigTree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -620,6 +621,17 @@ Light:
   m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114000010949484828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013897659850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3f6ebac24fc4d4da6d7f605d963d34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!119 &119000012079535736
 Projector:
   m_ObjectHideFlags: 1

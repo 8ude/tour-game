@@ -51,8 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73038fbf5e2854f1cb97ce5fdf27188b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  city: {fileID: 1000013579689172, guid: 8bf833097a0404becb44b7197b12c02c, type: 2}
+  city: {fileID: 0}
   preObjects: []
+  EndingStation: {fileID: 0}
+  EndingTrain: {fileID: 0}
   numTrees: 0
   numBigTrees: 0
   numFriends: 0
@@ -63,10 +65,12 @@ MonoBehaviour:
   TreeScore: 1
   BigTreeScore: 4
   StationScore: 3
-  BuildingScore: 2
+  BuildingScore: 1
   BigBuildingScore: 5
   MaxScore: 200
   ScoreTotal: 0
+  natureTotal: 0
+  cityTotal: 0
   minCameraSize: 10
   maxCameraSize: 15
   cityScale: 0.5
