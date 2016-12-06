@@ -648,7 +648,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPrefabSFX: {fileID: 183038, guid: c98a28a8b5e8c41b29ed77143550c025, type: 2}
   myAudioSource: {fileID: 82000012661525716}
-  BassSource: {fileID: 0}
-  LowMidSource: {fileID: 0}
-  HiMidSource: {fileID: 0}
-  HiSource: {fileID: 0}
+  SFXGroup: {fileID: 243000013834392078, guid: 06787db0913204748a1edde94cff23cd, type: 2}
