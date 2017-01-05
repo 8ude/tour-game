@@ -70,10 +70,11 @@ MonoBehaviour:
   StationScore: 3
   BuildingScore: 1
   BigBuildingScore: 5
-  MaxScore: 150
+  MaxScore: 110
   ScoreTotal: 0
   natureTotal: 0
   cityTotal: 0
   minCameraSize: 10
-  maxCameraSize: 11
+  maxCameraSize: 30
+  finalCameraSize: 30
   cityScale: 0.5
